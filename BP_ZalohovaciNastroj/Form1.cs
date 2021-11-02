@@ -26,12 +26,6 @@ namespace BP_ZalohovaciNastroj
                 TB_path.Text = folderBrowserDialog1.SelectedPath;
                 var dir = new DirectoryInfo(TB_path.Text);
                 files = dir.GetFiles("*.*", SearchOption.AllDirectories).ToList<FileInfo>();
-                foreach (var item in files)
-                {
-                    Console.WriteLine(item.FullName);
-                }
-
-               Console.WriteLine("-----------------------------\n--------------------\n---------------");
                 
                 foreach (FileInfo item in files)
                 {
