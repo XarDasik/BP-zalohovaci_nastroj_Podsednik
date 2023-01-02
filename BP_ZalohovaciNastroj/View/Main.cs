@@ -14,13 +14,12 @@ namespace BP_ZalohovaciNastroj
     {
         Backup backupForm = new Backup(false);
         Recovery recoveryForm;
-        NewProject newProjectForm;
         ShowProject showProject;
         public Main()
         {
             InitializeComponent();
 
-            backupForm = new Backup(false);
+            backupForm = new Backup(true);
             backupForm.TopLevel = false;
             backupForm.FormBorderStyle = FormBorderStyle.None;
             backupForm.Dock = DockStyle.Fill;
@@ -32,25 +31,12 @@ namespace BP_ZalohovaciNastroj
             recoveryForm.Dock = DockStyle.Fill;
             P_Main.Controls.Add(recoveryForm);
 
-            newProjectForm = new NewProject();
-            newProjectForm.TopLevel = false;
-            newProjectForm.FormBorderStyle = FormBorderStyle.None;
-            newProjectForm.Dock = DockStyle.Fill;
-            P_Main.Controls.Add(newProjectForm);
-
             showProject = new ShowProject();
             showProject.TopLevel = false;
             showProject.FormBorderStyle = FormBorderStyle.None;
             showProject.Dock = DockStyle.Fill;
             P_Main.Controls.Add(showProject);
         }
-
-        private void B_Backup_Click(object sender, EventArgs e)
-        {
-            HideAllForms();
-            backupForm.Show();
-        }
-
         private void B_Recovery_Click(object sender, EventArgs e)
         {
             HideAllForms();
@@ -60,13 +46,12 @@ namespace BP_ZalohovaciNastroj
         private void B_NewProject_Click(object sender, EventArgs e)
         {
             HideAllForms();
-            newProjectForm.Show();
+            backupForm.Show();
         }
         private void HideAllForms()
         {
             recoveryForm.Hide();
             backupForm.Hide();
-            newProjectForm.Hide();
             showProject.Hide();
         }
 

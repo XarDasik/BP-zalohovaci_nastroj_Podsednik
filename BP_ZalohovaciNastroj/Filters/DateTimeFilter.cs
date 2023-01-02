@@ -7,15 +7,16 @@ using System.Threading.Tasks;
 
 namespace BP_ZalohovaciNastroj.Filters
 {
-    enum BeforeAfter
+    public enum BeforeAfter
     {
         BEFORE, AFTER
     }
-    enum Flag
+    public enum Flag
     {
         CREATION,LASTWRITE,LASTACCESS
     }
-    class DateTimeFilter : Filter
+    [Serializable]
+    public class DateTimeFilter : Filter
     {
         public BeforeAfter BeforeAfter { get; set; }
         public DateTime DateTime { get; set; }
@@ -95,7 +96,7 @@ namespace BP_ZalohovaciNastroj.Filters
         }
         public override string ToString()
         {
-            return string.Format("{0}{1}{2} ({3} {4} {5})", Name.Length > 0 ? "<< " + Name + " >>" : "", OperatorNOT ? "(not)" : "", "AggregationFilter", Flag == Flag.CREATION ? "Creat" : Flag == Flag.LASTWRITE ? "LWrt" : "LAcc", BeforeAfter == BeforeAfter.AFTER ? "aft" : "bef", DateTime.ToString("yyyy-dd-MM HH:mm"));
+            return string.Format("{0}{1}{2} ({3} {4})", Name.Length > 0 ? "<< " + Name + " >>" : "", OperatorNOT ? "(not)" : "", Flag == Flag.CREATION ? "Creation" : Flag == Flag.LASTWRITE ? "Last Write" : "Last Access", BeforeAfter == BeforeAfter.AFTER ? "After" : "Before", DateTime.ToString("dd.MM.yyyy HH:mm"));
         }
     }
 }

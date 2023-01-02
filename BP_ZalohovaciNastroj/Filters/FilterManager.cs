@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace BP_ZalohovaciNastroj
 {
-    class FilterManager
+    [Serializable]
+    public class FilterManager
     {
         public MyFile[] Files { get; set; }
         public AggregationFilter AggregationFilter { get; set; }

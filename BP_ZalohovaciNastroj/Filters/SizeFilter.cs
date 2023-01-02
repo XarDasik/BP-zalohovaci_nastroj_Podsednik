@@ -7,15 +7,17 @@ using System.Threading.Tasks;
 
 namespace BP_ZalohovaciNastroj
 {
-    enum LargerSmaller
+    
+    public enum LargerSmaller
     {
         LARGER, SMALLER
     }
-    enum Unit
+    public enum Unit
     {
         B, kB, MB, GB
     }
-    class SizeFilter : Filter
+    [Serializable]
+    public class SizeFilter : Filter
     {
         public double Size { get; set; }
         public LargerSmaller LargerSmaller { get; set; }
@@ -71,7 +73,7 @@ namespace BP_ZalohovaciNastroj
         }
         public override string ToString()
         {
-            return string.Format("{0}{1}{2} ({3} {4}{5})", Name.Length > 0 ? "<< " + Name + " >>" : "", OperatorNOT ? "(not)" : "", "AggregationFilter", LargerSmaller == LargerSmaller.LARGER ? ">" : "<", Size, Unit);
+            return string.Format("{0}{1} ({2}{3}{4})", Name.Length > 0 ? "<< " + Name + " >>" : "", OperatorNOT ? "(not)" : "", LargerSmaller == LargerSmaller.LARGER ? ">" : "<", Size, Unit);
         }
     }
 }

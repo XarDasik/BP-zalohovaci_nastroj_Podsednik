@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BP_ZalohovaciNastroj
 {
-   enum AggregationOperand
+    public enum AggregationOperand
    {
         AND, OR
    }

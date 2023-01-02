@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace BP_ZalohovaciNastroj
 {
-    class FilePathFilter : Filter
+    [Serializable]
+    public class FilePathFilter : Filter
     {
         public string RegularExpression { get; set; }
         public FilePathFilter(bool OperatorNOT, string Name, string RegularExpression) : base(OperatorNOT, Name)
@@ -35,7 +36,7 @@ namespace BP_ZalohovaciNastroj
         }
         public override string ToString()
         {
-            return string.Format("{0}{1}{2} ({3}{{regex}})", Name.Length > 0 ? "<< " + Name + " >>" : "", OperatorNOT ? "(not)" : "", "FilePathFilter", RegularExpression);
+            return string.Format("{0}{1} ({2}{{regex}})", Name.Length > 0 ? "<< " + Name + " >>" : "", OperatorNOT ? "(not)" : "", RegularExpression);
         }
     }
 }

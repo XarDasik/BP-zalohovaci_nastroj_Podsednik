@@ -126,7 +126,7 @@ namespace BP_ZalohovaciNastroj
             this.Controls.Add(this.P_Main);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Anonymous Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.MinimumSize = new System.Drawing.Size(1234, 742);
+            this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "Main";
             this.Text = "Backup Tool";
             this.panel1.ResumeLayout(false);

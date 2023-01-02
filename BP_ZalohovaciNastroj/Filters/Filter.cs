@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace BP_ZalohovaciNastroj
 {
-    abstract class Filter
+    [Serializable]
+    public abstract class Filter
     {
         public bool OperatorNOT { get; set; }
         public string Name { get; set; }
