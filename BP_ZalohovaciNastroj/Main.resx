@@ -8,6 +8,9 @@ namespace BP_ZalohovaciNastroj
 {
     static class Program
     {
+        /// <summary>
+        /// Hlavní vstupní bod aplikace.
+        /// </summary>
         public static string test = "";
         [STAThread]
         static void Main()
