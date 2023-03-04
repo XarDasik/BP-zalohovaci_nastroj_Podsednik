@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BP_ZalohovaciNastroj.View.Recovery;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,11 +28,19 @@ namespace BP_ZalohovaciNastroj
         private const int EMPTY_FOLDER_INDEX = 3;
         private const int ERROR_FOLDER_INDEX = 4;
         private const int GRAY_FOLDER_INDEX = 5;
+        
         public RecoveryResult(Dictionary<FileInfo, Result> result, string init_folder)
         {
             this.result = result;
             this.init_folder = init_folder;
             InitializeComponent();
+            RecoveryLegend recoveryLegend = new RecoveryLegend();
+            recoveryLegend.TopLevel = false;
+            recoveryLegend.FormBorderStyle = FormBorderStyle.None;
+            recoveryLegend.Dock = DockStyle.Fill;
+            recoveryLegend.Show();
+            splitContainer2.Panel2.Controls.Add(recoveryLegend);
+
         }
         private void InitTvw()
         {

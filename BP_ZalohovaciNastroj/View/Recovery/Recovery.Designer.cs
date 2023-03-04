@@ -58,7 +58,7 @@ namespace BP_ZalohovaciNastroj
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Anonymous Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(53, 19);
+            this.label1.Location = new System.Drawing.Point(56, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 0;
@@ -88,7 +88,7 @@ namespace BP_ZalohovaciNastroj
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Anonymous Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(11, 50);
+            this.label2.Location = new System.Drawing.Point(14, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 12);
             this.label2.TabIndex = 4;

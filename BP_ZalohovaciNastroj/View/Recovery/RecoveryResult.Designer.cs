@@ -40,12 +40,16 @@ namespace BP_ZalohovaciNastroj
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tvw
@@ -76,9 +80,9 @@ namespace BP_ZalohovaciNastroj
             // 
             this.lvw.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvw.HideSelection = false;
-            this.lvw.Location = new System.Drawing.Point(10, 22);
+            this.lvw.Location = new System.Drawing.Point(0, 0);
             this.lvw.Name = "lvw";
-            this.lvw.Size = new System.Drawing.Size(549, 384);
+            this.lvw.Size = new System.Drawing.Size(549, 298);
             this.lvw.SmallImageList = this.dotList;
             this.lvw.TabIndex = 6;
             this.lvw.UseCompatibleStateImageBehavior = false;
@@ -132,8 +136,8 @@ namespace BP_ZalohovaciNastroj
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.splitContainer2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.lvw);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -151,6 +155,26 @@ namespace BP_ZalohovaciNastroj
             this.label1.TabIndex = 10;
             this.label1.Text = "Files:";
             // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(10, 22);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.lvw);
+            this.splitContainer2.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.splitContainer2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.splitContainer2.Size = new System.Drawing.Size(549, 384);
+            this.splitContainer2.SplitterDistance = 298;
+            this.splitContainer2.TabIndex = 11;
+            // 
             // RecoveryResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -159,7 +183,7 @@ namespace BP_ZalohovaciNastroj
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Anonymous Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Name = "RecoveryResult";
-            this.Text = "RecoveryResult";
+            this.Text = "Recovery result";
             this.Load += new System.EventHandler(this.RecoveryResult_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -169,6 +193,9 @@ namespace BP_ZalohovaciNastroj
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -184,5 +211,6 @@ namespace BP_ZalohovaciNastroj
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.SplitContainer splitContainer2;
     }
 }

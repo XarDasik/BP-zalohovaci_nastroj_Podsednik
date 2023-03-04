@@ -160,6 +160,16 @@ namespace BP_ZalohovaciNastroj
                 MessageBox.Show("The destination path doesn't exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (!Directory.Exists(TB_RootPath.Text))
+            {
+                MessageBox.Show("The rooth path doesn't exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (TB_RootPath.Text.Equals(TB_DestinationPath.Text))
+            {
+                MessageBox.Show("The root path can't be the same as destination path.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             List<FileInfo> filesToRecovery = new List<FileInfo>();
             List<String> originalNamesOfFiles = new List<String>();
 
@@ -200,7 +210,6 @@ namespace BP_ZalohovaciNastroj
                         catch (Exception)
                         {
                             result.Add(file, Result.ERROR);
-                            throw;
                         }                        
                         
                     }
@@ -229,7 +238,6 @@ namespace BP_ZalohovaciNastroj
                             catch (Exception)
                             {
                                 result.Add(item.Key, Result.ERROR);
-                                throw;
                             }
                         }
                         else
