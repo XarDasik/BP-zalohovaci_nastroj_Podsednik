@@ -44,8 +44,8 @@ namespace BP_ZalohovaciNastroj
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -57,7 +57,9 @@ namespace BP_ZalohovaciNastroj
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tvwFilters
@@ -68,7 +70,7 @@ namespace BP_ZalohovaciNastroj
             this.tvwFilters.Location = new System.Drawing.Point(10, 18);
             this.tvwFilters.Name = "tvwFilters";
             this.tvwFilters.SelectedImageIndex = 0;
-            this.tvwFilters.Size = new System.Drawing.Size(701, 177);
+            this.tvwFilters.Size = new System.Drawing.Size(701, 149);
             this.tvwFilters.TabIndex = 5;
             // 
             // dotList
@@ -188,7 +190,7 @@ namespace BP_ZalohovaciNastroj
             // 
             // splitContainer2.Panel2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.panel4);
+            this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
             this.splitContainer2.Size = new System.Drawing.Size(721, 511);
             this.splitContainer2.SplitterDistance = 257;
             this.splitContainer2.TabIndex = 0;
@@ -214,26 +216,35 @@ namespace BP_ZalohovaciNastroj
             this.label2.TabIndex = 8;
             this.label2.Text = "Files:";
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.tvwFilters);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Padding = new System.Windows.Forms.Padding(10, 18, 10, 55);
-            this.panel4.Size = new System.Drawing.Size(721, 250);
-            this.panel4.TabIndex = 6;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Anonymous Pro", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(7, 4);
+            this.label3.Location = new System.Drawing.Point(7, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(119, 13);
             this.label3.TabIndex = 9;
             this.label3.Text = "Filter result:";
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Name = "splitContainer3";
+            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.label3);
+            this.splitContainer3.Panel1.Controls.Add(this.tvwFilters);
+            this.splitContainer3.Panel1.Padding = new System.Windows.Forms.Padding(10, 18, 10, 4);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Padding = new System.Windows.Forms.Padding(2, 0, 10, 9);
+            this.splitContainer3.Size = new System.Drawing.Size(721, 250);
+            this.splitContainer3.SplitterDistance = 171;
+            this.splitContainer3.TabIndex = 10;
             // 
             // FilterResult
             // 
@@ -259,8 +270,10 @@ namespace BP_ZalohovaciNastroj
             this.splitContainer2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -278,9 +291,9 @@ namespace BP_ZalohovaciNastroj
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.SplitContainer splitContainer3;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BP_ZalohovaciNastroj.View.Backup;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,6 +44,12 @@ namespace BP_ZalohovaciNastroj
         {
             InitTvw();
             this.Text += " - " + (string)new DirectoryInfo(init_folder).FullName;
+            BackupLegendFilterResult BackupLegend = new BackupLegendFilterResult();
+            BackupLegend.TopLevel = false;
+            BackupLegend.FormBorderStyle = FormBorderStyle.None;
+            BackupLegend.Dock = DockStyle.Fill;
+            BackupLegend.Show();
+            splitContainer3.Panel2.Controls.Add(BackupLegend);
         }
         private void InitTvw()
         {            
@@ -114,12 +121,32 @@ namespace BP_ZalohovaciNastroj
                 }
             }
 
+            
             if (countToBackUp == 0 && di.GetFiles().Count() > 0)
                 return RED_FOLDER_INDEX;
+            else if (countToBackUp == 0 && di.GetDirectories().Length > 0)
+                return GetColorNextFolder(di);
             else if (countToBackUp < di.GetFiles().Count())
                 return YELLOW_FOLDER_INDEX;
             else
                 return GREEN_FOLDER_INDEX;
+        }
+        private int GetColorNextFolder(DirectoryInfo di) 
+        {
+            List<int> temp = new List<int>();
+            foreach (DirectoryInfo item in di.GetDirectories())
+            {
+                int subDirectory = GetColorIndexOfFolderByFiles(item);
+                temp.Add(subDirectory);
+                if (item.GetDirectories().Length > 0)
+                    temp.Add(GetColorIndexOfFolder(item));
+            }
+            for (int i = 0; i < temp.Count - 1; i++)
+            {
+                if (temp[i] != temp[i + 1])
+                    return YELLOW_FOLDER_INDEX;
+            }
+            return temp[0];
         }
         private int GetColorIndexOfFolder(DirectoryInfo di)
         {
@@ -141,7 +168,7 @@ namespace BP_ZalohovaciNastroj
             for (int i = 0; i < temp.Count-1; i++)
             {
                 if (temp[i] != temp[i + 1])
-                    return YELLOW_FOLDER_INDEX;
+                        return YELLOW_FOLDER_INDEX;
             }
             return GetColorIndexOfFolderByFiles(di);
         }
@@ -194,16 +221,17 @@ namespace BP_ZalohovaciNastroj
             tvwFilters.ExpandAll();
             tvwFilters.Refresh();
         }
-        public void FillFilterView(TreeView treeview1, FileInfo f)
+        public void FillFilterView(TreeView filters, FileInfo f)
         {            
-            TreeNode newTn = new TreeNode("MainFilter");
-            foreach (TreeNode tn in treeview1.Nodes)
+            TreeNode newTn = new TreeNode("MainFilter");            
+            foreach (TreeNode tn in filters.Nodes)
             {
                 Filter filter = (Filter)tn.Tag;
-                 if (filter.Accepts(f, new Project()))
-                      newTn = new TreeNode(String.Format("[Acc] " + tn.Text), GREEN_DOT_INDEX, GREEN_DOT_INDEX);
+                string safeText = tn.Text.Replace('{', '[').Replace('}', ']');
+                if (filter.Accepts(f, new Project()))
+                      newTn = new TreeNode(String.Format("[Acc] " + safeText), GREEN_DOT_INDEX, GREEN_DOT_INDEX);
                  else
-                      newTn = new TreeNode(String.Format("[Rej] " + tn.Text), RED_DOT_INDEX, RED_DOT_INDEX);
+                      newTn = new TreeNode(String.Format("[Rej] " + safeText), RED_DOT_INDEX, RED_DOT_INDEX);
                 FillFilterNodeChildren(newTn, tn, f);          
                 tvwFilters.Nodes.Add(newTn);
             }
@@ -280,7 +308,6 @@ namespace BP_ZalohovaciNastroj
                             catch (Exception)
                             {
                                 backupInfo.Add(item, Result.ERROR);
-                                throw;
                             }
                         }                            
                     }                    
@@ -290,7 +317,7 @@ namespace BP_ZalohovaciNastroj
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Unknown error. Make sure, you don't move files during backup.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }           
         }
 

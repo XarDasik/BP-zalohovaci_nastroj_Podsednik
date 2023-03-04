@@ -772,7 +772,7 @@ namespace BP_ZalohovaciNastroj
             this.Font = new System.Drawing.Font("Anonymous Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.MinimumSize = new System.Drawing.Size(821, 534);
             this.Name = "Backup";
-            this.Text = "Demo Zalohovaci nastroj";
+            this.Text = "Backup tool";
             this.GB_GlobalSettings.ResumeLayout(false);
             this.GB_GlobalSettings.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_NumberOfBackups)).EndInit();

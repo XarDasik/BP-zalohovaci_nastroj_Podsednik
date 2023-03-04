@@ -16,3 +16,6 @@ C:\Users\phili\source\repos\BP_ZalohovaciNastroj\obj\Debug\BP_ZalohovaciNastroj.
 C:\Users\phili\source\repos\BP_ZalohovaciNastroj\obj\Debug\BP_ZalohovaciNastroj.csproj.CoreCompileInputs.cache
 C:\Users\phili\source\repos\BP_ZalohovaciNastroj\obj\Debug\BP_ZalohovaciNastroj.exe
 C:\Users\phili\source\repos\BP_ZalohovaciNastroj\obj\Debug\BP_ZalohovaciNastroj.pdb
+C:\Users\phili\source\repos\BP_ZalohovaciNastroj\obj\Debug\BP_ZalohovaciNastroj.View.Recovery.RecoveryLegend.resources
+C:\Users\phili\source\repos\BP_ZalohovaciNastroj\obj\Debug\BP_ZalohovaciNastroj.View.Backup.BackupLegendFilterResult.resources
+C:\Users\phili\source\repos\BP_ZalohovaciNastroj\obj\Debug\BP_ZalohovaciNastroj.View.Backup.Legends.BackupLegendResult.resources

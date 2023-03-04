@@ -32,13 +32,13 @@ namespace BP_ZalohovaciNastroj
             this.lbProjects = new System.Windows.Forms.ListBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnDeleteProject = new System.Windows.Forms.Button();
             this.btnLoadProject = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlBackup = new System.Windows.Forms.Panel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.btnDeleteProject = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -89,6 +89,18 @@ namespace BP_ZalohovaciNastroj
             this.panel3.Padding = new System.Windows.Forms.Padding(5);
             this.panel3.Size = new System.Drawing.Size(135, 67);
             this.panel3.TabIndex = 3;
+            // 
+            // btnDeleteProject
+            // 
+            this.btnDeleteProject.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnDeleteProject.Location = new System.Drawing.Point(5, 34);
+            this.btnDeleteProject.Name = "btnDeleteProject";
+            this.btnDeleteProject.Padding = new System.Windows.Forms.Padding(3);
+            this.btnDeleteProject.Size = new System.Drawing.Size(125, 28);
+            this.btnDeleteProject.TabIndex = 2;
+            this.btnDeleteProject.Text = "Delete project";
+            this.btnDeleteProject.UseVisualStyleBackColor = true;
+            this.btnDeleteProject.Click += new System.EventHandler(this.btnDeleteProject_Click);
             // 
             // btnLoadProject
             // 
@@ -142,18 +154,6 @@ namespace BP_ZalohovaciNastroj
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // btnDeleteProject
-            // 
-            this.btnDeleteProject.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnDeleteProject.Location = new System.Drawing.Point(5, 34);
-            this.btnDeleteProject.Name = "btnDeleteProject";
-            this.btnDeleteProject.Padding = new System.Windows.Forms.Padding(3);
-            this.btnDeleteProject.Size = new System.Drawing.Size(125, 28);
-            this.btnDeleteProject.TabIndex = 2;
-            this.btnDeleteProject.Text = "Delete project";
-            this.btnDeleteProject.UseVisualStyleBackColor = true;
-            this.btnDeleteProject.Click += new System.EventHandler(this.btnDeleteProject_Click);
-            // 
             // ShowProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -162,7 +162,7 @@ namespace BP_ZalohovaciNastroj
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Anonymous Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Name = "ShowProject";
-            this.Text = "ShowProject";
+            this.Text = "Show project";
             this.Enter += new System.EventHandler(this.ShowProject_Enter);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);

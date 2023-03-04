@@ -54,7 +54,7 @@ namespace BP_ZalohovaciNastroj
             Filter newFilter;
             if(TV_FiltersView.SelectedNode == null)
             {
-                MessageBox.Show("Choose aggregation filter", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Choose an aggregation filter", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -144,7 +144,7 @@ namespace BP_ZalohovaciNastroj
             }
             else
             {
-                MessageBox.Show("Please choose aggregation operand.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please choose an aggregation operand.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             return new AggregationFilter(ChB_Negate.Checked, TB_NameOfFilter.Text, Ao, new List<Filter>());
@@ -154,7 +154,7 @@ namespace BP_ZalohovaciNastroj
         {
             if(TB_PathRegex.Text.Length == 0)
             {
-                MessageBox.Show("Please fill Regex first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please fill the Regex first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             return new FilePathFilter(ChB_Negate.Checked, TB_NameOfFilter.Text, TB_PathRegex.Text);
@@ -169,7 +169,7 @@ namespace BP_ZalohovaciNastroj
             }
             if(count == 0)
             {
-                MessageBox.Show("Please choose file attribute first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please choose a file attribute first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             int lastIndex = 0;
@@ -196,7 +196,7 @@ namespace BP_ZalohovaciNastroj
                 beforeAfter = BeforeAfter.AFTER;
             else
             {
-                MessageBox.Show("Please choose comparing first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please choose the comparing first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
 
@@ -209,7 +209,7 @@ namespace BP_ZalohovaciNastroj
                 flag = Flag.LASTACCESS;
             else
             {
-                MessageBox.Show("Please choose file flag first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please choose the file flag first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             return new DateTimeFilter(ChB_Negate.Checked, TB_NameOfFilter.Text, beforeAfter, DTP_Date.Value, flag);
@@ -224,7 +224,7 @@ namespace BP_ZalohovaciNastroj
                 largerSmaller = LargerSmaller.SMALLER;
             else
             {
-                MessageBox.Show("Please choose comparing first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please choose the comparing first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             Unit unit;
@@ -238,7 +238,7 @@ namespace BP_ZalohovaciNastroj
                 unit = Unit.GB;
             else
             {
-                MessageBox.Show("Please choose unit of size first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please choose an unit of size first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             return new SizeFilter(ChB_Negate.Checked, TB_NameOfFilter.Text, Decimal.ToDouble(NUD_Number.Value), largerSmaller, unit);
@@ -424,7 +424,7 @@ namespace BP_ZalohovaciNastroj
         {
             if (TV_FiltersView.SelectedNode == null)
             {
-                MessageBox.Show("Select node you want to edit first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Select a node you want to edit first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if(TV_FiltersView.SelectedNode.Nodes.Count > 0 && TC_Filters.SelectedIndex != 0)
@@ -498,6 +498,11 @@ namespace BP_ZalohovaciNastroj
                 MessageBox.Show("Select a valid path.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (TB_RootPath.Text.Equals(TB_DestinationPath.Text))
+            {
+                MessageBox.Show("The root path can't be the same as a destination path.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             var dir = new DirectoryInfo(TB_RootPath.Text);
 
             if (!dir.Exists)
@@ -505,6 +510,7 @@ namespace BP_ZalohovaciNastroj
                 MessageBox.Show("The Root path doesn't exist. Please select a valid path.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
             FileInfo[] temp = dir.GetFiles("*.*", SearchOption.AllDirectories);
             project.FilterManager.Files = project.FilterManager.ConvertToMyFile(temp);
             project.FilterManager.AggregationFilter = project.MainFilter;
@@ -609,7 +615,7 @@ namespace BP_ZalohovaciNastroj
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Do you want to save changes?", "Save action", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Do you want to save the changes?", "Save action", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 try
@@ -621,8 +627,7 @@ namespace BP_ZalohovaciNastroj
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("There was an unexpected error.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    throw;
+                    MessageBox.Show("There was an unexpected error. Try to run the application as an administrator.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }                           
         }

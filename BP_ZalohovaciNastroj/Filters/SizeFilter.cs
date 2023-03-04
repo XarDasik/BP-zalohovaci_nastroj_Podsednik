@@ -62,9 +62,9 @@ namespace BP_ZalohovaciNastroj
                 case Unit.kB:
                     sizeOfFile /= 1024.0; break;
                 case Unit.MB:
-                    sizeOfFile /= 1024 * 1024; break;
+                    sizeOfFile /= 1024.0 * 1024.0; break;
                 case Unit.GB:
-                     sizeOfFile /= 1024 * 1024 * 1024; break;
+                     sizeOfFile /= 1024.0 * 1024.0 * 1024.0; break;
                 default:
                     throw new InvalidOperationException("This Unit is not compatible: " + Unit);
             }

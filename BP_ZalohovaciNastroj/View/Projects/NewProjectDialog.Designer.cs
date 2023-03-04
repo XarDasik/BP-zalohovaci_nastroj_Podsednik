@@ -31,13 +31,13 @@ namespace BP_ZalohovaciNastroj.View
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewProjectDialog));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnOk = new System.Windows.Forms.Button();
             this.tbSaveLocation = new System.Windows.Forms.TextBox();
             this.tbNameProject = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.B_DestionationPathLoader = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnOk = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -57,18 +57,42 @@ namespace BP_ZalohovaciNastroj.View
             this.panel2.Size = new System.Drawing.Size(547, 194);
             this.panel2.TabIndex = 9;
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Font = new System.Drawing.Font("Anonymous Pro", 8.25F);
+            this.btnCancel.Location = new System.Drawing.Point(291, 146);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(108, 36);
+            this.btnCancel.TabIndex = 9;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnOk
+            // 
+            this.btnOk.Font = new System.Drawing.Font("Anonymous Pro", 8.25F);
+            this.btnOk.Location = new System.Drawing.Point(177, 146);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(108, 36);
+            this.btnOk.TabIndex = 8;
+            this.btnOk.Text = "OK";
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            // 
             // tbSaveLocation
             // 
+            this.tbSaveLocation.Font = new System.Drawing.Font("Anonymous Pro", 8.25F);
             this.tbSaveLocation.Location = new System.Drawing.Point(148, 40);
             this.tbSaveLocation.Name = "tbSaveLocation";
-            this.tbSaveLocation.Size = new System.Drawing.Size(339, 20);
+            this.tbSaveLocation.Size = new System.Drawing.Size(339, 18);
             this.tbSaveLocation.TabIndex = 3;
             // 
             // tbNameProject
             // 
+            this.tbNameProject.Font = new System.Drawing.Font("Anonymous Pro", 8.25F);
             this.tbNameProject.Location = new System.Drawing.Point(148, 12);
             this.tbNameProject.Name = "tbNameProject";
-            this.tbNameProject.Size = new System.Drawing.Size(373, 20);
+            this.tbNameProject.Size = new System.Drawing.Size(373, 18);
             this.tbNameProject.TabIndex = 1;
             // 
             // label1
@@ -96,31 +120,12 @@ namespace BP_ZalohovaciNastroj.View
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(67, 44);
+            this.label2.Font = new System.Drawing.Font("Anonymous Pro", 8.25F);
+            this.label2.Location = new System.Drawing.Point(59, 43);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.Size = new System.Drawing.Size(89, 12);
             this.label2.TabIndex = 2;
             this.label2.Text = "Save location:";
-            // 
-            // btnOk
-            // 
-            this.btnOk.Location = new System.Drawing.Point(177, 146);
-            this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(108, 36);
-            this.btnOk.TabIndex = 8;
-            this.btnOk.Text = "OK";
-            this.btnOk.UseVisualStyleBackColor = true;
-            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(291, 146);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(108, 36);
-            this.btnCancel.TabIndex = 9;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // NewProjectDialog
             // 

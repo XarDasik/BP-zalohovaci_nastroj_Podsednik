@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BP_ZalohovaciNastroj.View.Backup.Legends;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,12 +27,19 @@ namespace BP_ZalohovaciNastroj
         private const int EMPTY_FOLDER_INDEX = 3;
         private const int ERROR_FOLDER_INDEX = 4;
         private const int GRAY_FOLDER_INDEX = 5;
+        
 
         public BackupResult(Dictionary<MyFile, Result> notBackUped, string init_folder)
         {
             InitializeComponent();
             this.notBackUped = notBackUped;
             this.init_folder = init_folder;
+            BackupLegendResult backupLegendResult = new BackupLegendResult();
+            backupLegendResult.TopLevel = false;
+            backupLegendResult.FormBorderStyle = FormBorderStyle.None;
+            backupLegendResult.Dock = DockStyle.Fill;
+            backupLegendResult.Show();
+            splitContainer2.Panel2.Controls.Add(backupLegendResult);
         }
 
         private void InitTvw()
