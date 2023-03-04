@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="View\Backup\Legends\BackupLegendFilterResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Backup\Legends\BackupLegendFilterResult.Designer.cs">
+      <DependentUpon>BackupLegendFilterResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Backup\BackupResult.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Backup\BackupResult.Designer.cs">
       <DependentUpon>BackupResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Backup\Legends\BackupLegendResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Backup\Legends\BackupLegendResult.Designer.cs">
+      <DependentUpon>BackupLegendResult.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Recovery\CopyFileDialog.cs">
       <SubType>Form</SubType>
@@ -58,7 +70,7 @@
     <Compile Include="View\Recovery\CopyFileDialog.Designer.cs">
       <DependentUpon>CopyFileDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Extensions.cs" />
+    <Compile Include="Filters\Extensions.cs" />
     <Compile Include="Filters\AggregationFilter.cs" />
     <Compile Include="Filters\Enums\AggregationOperandEnum.cs" />
     <Compile Include="Filters\AttributeFilter.cs" />
@@ -85,9 +97,9 @@
     <Compile Include="View\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyFile.cs" />
+    <Compile Include="Model\MyFile.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Project.cs" />
+    <Compile Include="Model\Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Filters\SizeFilter.cs" />
     <Compile Include="View\Backup\BackupFilterResult.cs">
@@ -102,6 +114,12 @@
     <Compile Include="View\Recovery\Recovery.Designer.cs">
       <DependentUpon>Recovery.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Recovery\RecoveryLegend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Recovery\RecoveryLegend.Designer.cs">
+      <DependentUpon>RecoveryLegend.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Recovery\RecoveryResult.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,11 +132,18 @@
     <Compile Include="View\Projects\ShowProject.Designer.cs">
       <DependentUpon>ShowProject.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Backup\Legends\BackupLegendFilterResult.resx">
+      <DependentUpon>BackupLegendFilterResult.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Backup\BackupResult.resx">
       <DependentUpon>BackupResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Backup\Backup.resx">
       <DependentUpon>Backup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Backup\Legends\BackupLegendResult.resx">
+      <DependentUpon>BackupLegendResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Recovery\CopyFileDialog.resx">
       <DependentUpon>CopyFileDialog.cs</DependentUpon>
@@ -145,13 +170,16 @@
     <EmbeddedResource Include="View\Recovery\Recovery.resx">
       <DependentUpon>Recovery.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Recovery\RecoveryLegend.resx">
+      <DependentUpon>RecoveryLegend.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Recovery\RecoveryResult.resx">
       <DependentUpon>RecoveryResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Projects\ShowProject.resx">
       <DependentUpon>ShowProject.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="pictures\Anonymous_Pro.ttf" />
+    <None Include="external\Anonymous_Pro.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -166,7 +194,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="pictures\folder.png" />
+    <Content Include="external\folder.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
