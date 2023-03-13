@@ -44,8 +44,9 @@ namespace BP_ZalohovaciNastroj
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.label3 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -70,7 +71,7 @@ namespace BP_ZalohovaciNastroj
             this.tvwFilters.Location = new System.Drawing.Point(10, 18);
             this.tvwFilters.Name = "tvwFilters";
             this.tvwFilters.SelectedImageIndex = 0;
-            this.tvwFilters.Size = new System.Drawing.Size(701, 149);
+            this.tvwFilters.Size = new System.Drawing.Size(762, 142);
             this.tvwFilters.TabIndex = 5;
             // 
             // dotList
@@ -86,7 +87,7 @@ namespace BP_ZalohovaciNastroj
             this.lvw.HideSelection = false;
             this.lvw.Location = new System.Drawing.Point(10, 18);
             this.lvw.Name = "lvw";
-            this.lvw.Size = new System.Drawing.Size(701, 230);
+            this.lvw.Size = new System.Drawing.Size(762, 272);
             this.lvw.SmallImageList = this.dotList;
             this.lvw.TabIndex = 4;
             this.lvw.UseCompatibleStateImageBehavior = false;
@@ -101,7 +102,7 @@ namespace BP_ZalohovaciNastroj
             this.tvw.Location = new System.Drawing.Point(10, 18);
             this.tvw.Name = "tvw";
             this.tvw.SelectedImageIndex = 0;
-            this.tvw.Size = new System.Drawing.Size(342, 449);
+            this.tvw.Size = new System.Drawing.Size(371, 524);
             this.tvw.TabIndex = 3;
             this.tvw.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.tvw_BeforeExpand);
             this.tvw.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvw_AfterSelect);
@@ -121,7 +122,7 @@ namespace BP_ZalohovaciNastroj
             this.B_BackUp.Dock = System.Windows.Forms.DockStyle.Fill;
             this.B_BackUp.Location = new System.Drawing.Point(5, 5);
             this.B_BackUp.Name = "B_BackUp";
-            this.B_BackUp.Size = new System.Drawing.Size(352, 25);
+            this.B_BackUp.Size = new System.Drawing.Size(381, 25);
             this.B_BackUp.TabIndex = 6;
             this.B_BackUp.Text = "Backup";
             this.B_BackUp.UseVisualStyleBackColor = true;
@@ -130,10 +131,10 @@ namespace BP_ZalohovaciNastroj
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Anonymous Pro", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(7, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 13);
+            this.label1.Size = new System.Drawing.Size(101, 18);
             this.label1.TabIndex = 7;
             this.label1.Text = "File System:";
             // 
@@ -151,8 +152,8 @@ namespace BP_ZalohovaciNastroj
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1087, 511);
-            this.splitContainer1.SplitterDistance = 362;
+            this.splitContainer1.Size = new System.Drawing.Size(1177, 586);
+            this.splitContainer1.SplitterDistance = 391;
             this.splitContainer1.TabIndex = 10;
             // 
             // panel1
@@ -163,17 +164,17 @@ namespace BP_ZalohovaciNastroj
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10, 18, 10, 9);
-            this.panel1.Size = new System.Drawing.Size(362, 476);
+            this.panel1.Size = new System.Drawing.Size(391, 551);
             this.panel1.TabIndex = 7;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.B_BackUp);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 476);
+            this.panel2.Location = new System.Drawing.Point(0, 551);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(5);
-            this.panel2.Size = new System.Drawing.Size(362, 35);
+            this.panel2.Size = new System.Drawing.Size(391, 35);
             this.panel2.TabIndex = 8;
             // 
             // splitContainer2
@@ -191,8 +192,8 @@ namespace BP_ZalohovaciNastroj
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Size = new System.Drawing.Size(721, 511);
-            this.splitContainer2.SplitterDistance = 257;
+            this.splitContainer2.Size = new System.Drawing.Size(782, 586);
+            this.splitContainer2.SplitterDistance = 299;
             this.splitContainer2.TabIndex = 0;
             // 
             // panel3
@@ -203,28 +204,18 @@ namespace BP_ZalohovaciNastroj
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(10, 18, 10, 9);
-            this.panel3.Size = new System.Drawing.Size(721, 257);
+            this.panel3.Size = new System.Drawing.Size(782, 299);
             this.panel3.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Anonymous Pro", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.Location = new System.Drawing.Point(7, 4);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.Size = new System.Drawing.Size(49, 18);
             this.label2.TabIndex = 8;
             this.label2.Text = "Files:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Anonymous Pro", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(7, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Filter result:";
             // 
             // splitContainer3
             // 
@@ -241,18 +232,35 @@ namespace BP_ZalohovaciNastroj
             // 
             // splitContainer3.Panel2
             // 
-            this.splitContainer3.Panel2.Padding = new System.Windows.Forms.Padding(2, 0, 10, 9);
-            this.splitContainer3.Size = new System.Drawing.Size(721, 250);
-            this.splitContainer3.SplitterDistance = 171;
+            this.splitContainer3.Panel2.Padding = new System.Windows.Forms.Padding(2, 0, 10, 0);
+            this.splitContainer3.Size = new System.Drawing.Size(782, 283);
+            this.splitContainer3.SplitterDistance = 164;
             this.splitContainer3.TabIndex = 10;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(7, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(98, 18);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Filter result:";
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
             // FilterResult
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1087, 511);
+            this.ClientSize = new System.Drawing.Size(1177, 586);
             this.Controls.Add(this.splitContainer1);
-            this.Font = new System.Drawing.Font("Anonymous Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.MinimumSize = new System.Drawing.Size(800, 465);
             this.Name = "FilterResult";
             this.Text = "Filter result";
@@ -295,5 +303,6 @@ namespace BP_ZalohovaciNastroj
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.SplitContainer splitContainer3;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

@@ -58,10 +58,10 @@ namespace BP_ZalohovaciNastroj
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Anonymous Pro", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(9, 105);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(260, 32);
+            this.label1.Size = new System.Drawing.Size(267, 48);
             this.label1.TabIndex = 1;
             this.label1.Text = "Do you want to copy the file\r\nto the destination anyway?";
             // 
@@ -71,7 +71,7 @@ namespace BP_ZalohovaciNastroj
             this.btnForAllFilesInAFolder.Name = "btnForAllFilesInAFolder";
             this.btnForAllFilesInAFolder.Size = new System.Drawing.Size(101, 41);
             this.btnForAllFilesInAFolder.TabIndex = 3;
-            this.btnForAllFilesInAFolder.Text = "For all files in a folder";
+            this.btnForAllFilesInAFolder.Text = "For all files in\\n a folder";
             this.btnForAllFilesInAFolder.UseVisualStyleBackColor = true;
             this.btnForAllFilesInAFolder.Click += new System.EventHandler(this.btnForAllFilesInAFolder_Click);
             // 
@@ -91,12 +91,12 @@ namespace BP_ZalohovaciNastroj
             this.lblFileName.AutoEllipsis = true;
             this.lblFileName.AutoSize = true;
             this.lblFileName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblFileName.Font = new System.Drawing.Font("Anonymous Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblFileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblFileName.Location = new System.Drawing.Point(3, 0);
             this.lblFileName.Name = "lblFileName";
-            this.lblFileName.Size = new System.Drawing.Size(104, 16);
+            this.lblFileName.Size = new System.Drawing.Size(100, 24);
             this.lblFileName.TabIndex = 5;
-            this.lblFileName.Text = "def def dewf";
+            this.lblFileName.Text = "lblfilename";
             // 
             // btnNo
             // 
@@ -143,7 +143,7 @@ namespace BP_ZalohovaciNastroj
             this.lblCountListingOfFiles.AutoSize = true;
             this.lblCountListingOfFiles.Location = new System.Drawing.Point(12, 93);
             this.lblCountListingOfFiles.Name = "lblCountListingOfFiles";
-            this.lblCountListingOfFiles.Size = new System.Drawing.Size(41, 12);
+            this.lblCountListingOfFiles.Size = new System.Drawing.Size(46, 17);
             this.lblCountListingOfFiles.TabIndex = 9;
             this.lblCountListingOfFiles.Text = "label2";
             // 
@@ -152,7 +152,7 @@ namespace BP_ZalohovaciNastroj
             this.lblActualState.AutoSize = true;
             this.lblActualState.Location = new System.Drawing.Point(12, 76);
             this.lblActualState.Name = "lblActualState";
-            this.lblActualState.Size = new System.Drawing.Size(41, 12);
+            this.lblActualState.Size = new System.Drawing.Size(46, 17);
             this.lblActualState.TabIndex = 10;
             this.lblActualState.Text = "label2";
             // 
@@ -172,15 +172,15 @@ namespace BP_ZalohovaciNastroj
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(547, 56);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(551, 56);
             this.flowLayoutPanel1.TabIndex = 12;
             // 
             // CopyFileDialog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(547, 194);
+            this.ClientSize = new System.Drawing.Size(551, 195);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.lblActualState);
@@ -193,7 +193,7 @@ namespace BP_ZalohovaciNastroj
             this.Controls.Add(this.btnNo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnYes);
-            this.Font = new System.Drawing.Font("Anonymous Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Name = "CopyFileDialog";
             this.Text = "Dialog";
             this.flowLayoutPanel1.ResumeLayout(false);

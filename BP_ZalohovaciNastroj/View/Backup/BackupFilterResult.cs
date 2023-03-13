@@ -1,4 +1,5 @@
 ﻿using BP_ZalohovaciNastroj.View.Backup;
+using BP_ZalohovaciNastroj.View.Backup.ProgressWindows;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,7 +17,6 @@ namespace BP_ZalohovaciNastroj
 {
     public partial class FilterResult : Form
     {
-
         private const int RED_DOT_INDEX = 0;
         private const int GREEN_DOT_INDEX = 1;
 
@@ -30,6 +31,9 @@ namespace BP_ZalohovaciNastroj
         private string init_folder;
         private string destination_folder;
         private int maxCountOfBackups;
+        BackupProgress backupProgress = new BackupProgress();
+        Dictionary<MyFile, Result> backupInfo = new Dictionary<MyFile, Result>();
+        private string actualFile;
 
         public FilterResult(MyFile[] files, TreeView filters,string init_folder, string destination_folder, int maxCountOfBackups)
         {
@@ -50,6 +54,9 @@ namespace BP_ZalohovaciNastroj
             BackupLegend.Dock = DockStyle.Fill;
             BackupLegend.Show();
             splitContainer3.Panel2.Controls.Add(BackupLegend);
+
+            backgroundWorker1.WorkerReportsProgress = true;
+            backgroundWorker1.WorkerSupportsCancellation = true;
         }
         private void InitTvw()
         {            
@@ -250,75 +257,32 @@ namespace BP_ZalohovaciNastroj
                  FillFilterNodeChildren(newTn, tn, f);
             }
         }
+        private int GetFileCount() 
+        {
+            int ret = 0;
+            foreach (MyFile file in Files)
+            {
+                if (file.ToBackUp) 
+                { 
+                    ret++;
+                }
+            }
+            return ret;           
+        }
+        
 
         private void B_BackUp_Click(object sender, EventArgs e)
         {
-            Dictionary<MyFile,Result> backupInfo = new Dictionary<MyFile, Result>();
-            try
-            {
-                foreach (string dirPath in Directory.GetDirectories(init_folder, "*", SearchOption.AllDirectories))
-                {
-                    foreach (var item in Files)
-                    {
-                        if (item.File.DirectoryName.Equals(dirPath) && item.ToBackUp)
-                            Directory.CreateDirectory(dirPath.Replace(init_folder, destination_folder));
-                    }                    
-                }
-                foreach (string newPath in Directory.GetFiles(init_folder, "*.*", SearchOption.AllDirectories))
-                {
-                    foreach (var item in Files)
-                    {
-                        if(item.File.FullName.Equals(newPath) && item.ToBackUp)
-                        {
-                            try
-                            {
-                                if (File.Exists(newPath.Replace(init_folder, destination_folder)))
-                                {
-                                    DateTime dateTime = File.GetCreationTime((newPath.Replace(init_folder, destination_folder)));
-                                    if(maxCountOfBackups == 0)
-                                    {
-                                        File.Delete(newPath.Replace(init_folder, destination_folder));
-                                        File.Copy(newPath, newPath.Replace(init_folder, destination_folder));
-                                    }
-                                    else
-                                    {
-                                        if (IsMaximumBackupsAlready(Path.GetFileNameWithoutExtension(newPath), newPath.Replace(init_folder, destination_folder).Substring(0, newPath.Replace(init_folder, destination_folder).LastIndexOf('\\') + 1), item.File.Extension))
-                                        {
-                                            DeleteTheOldestBackup(GetOldBackups(Path.GetFileNameWithoutExtension(newPath), newPath.Replace(init_folder, destination_folder).Substring(0, newPath.Replace(init_folder, destination_folder).LastIndexOf('\\') + 1), item.File.Extension));
-                                            string newName = (Path.GetFileNameWithoutExtension(newPath) + "_" + dateTime.ToString("yyyy-MM-dd-HH-mm-ss") + Path.GetExtension(newPath));
-                                            File.Move(newPath.Replace(init_folder, destination_folder), newPath.Replace(init_folder, destination_folder).Substring(0, newPath.Replace(init_folder, destination_folder).LastIndexOf('\\') + 1) + newName);
-                                            File.Copy(newPath, newPath.Replace(init_folder, destination_folder), false);
-                                        }
-                                        else
-                                        {
-                                            string newName = (Path.GetFileNameWithoutExtension(newPath) + "_" + dateTime.ToString("yyyy-MM-dd-HH-mm-ss") + Path.GetExtension(newPath));
-                                            File.Move(newPath.Replace(init_folder, destination_folder), newPath.Replace(init_folder, destination_folder).Substring(0, newPath.Replace(init_folder, destination_folder).LastIndexOf('\\') + 1) + newName);
-                                            File.Copy(newPath, newPath.Replace(init_folder, destination_folder), false);
-                                        }
-                                        
-                                    }
-                                    backupInfo.Add(item, Result.SUCCESSFULL);
-                                }
-                                else
-                                {                                    
-                                    File.Copy(newPath, newPath.Replace(init_folder, destination_folder), false);
-                                    backupInfo.Add(item, Result.SUCCESSFULL);
-                                }                                
-                            }
-                            catch (Exception)
-                            {
-                                backupInfo.Add(item, Result.ERROR);
-                            }
-                        }                            
-                    }                    
-                }
-                BackupResult backUpResult = new BackupResult(backupInfo, init_folder);
-                backUpResult.Show();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Unknown error. Make sure, you don't move files during backup.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }           
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to backup?\nThe process can't be stopped and can take some time.", "Backup", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.No)
+                return;
+
+            if (GetFileCount() > 0)
+            {                
+                backgroundWorker1.RunWorkerAsync();
+                backupProgress.FileCount = GetFileCount();
+                backupProgress.ShowDialog();
+            }         
         }
 
         private void DeleteTheOldestBackup(List<FileInfo> files)
@@ -369,6 +333,110 @@ namespace BP_ZalohovaciNastroj
             if (matches.Count > 0)
                 return true;
             else return false;
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            
+            try
+            {
+                foreach (string dirPath in Directory.GetDirectories(init_folder, "*", SearchOption.AllDirectories))
+                {
+                    foreach (var item in Files)
+                    {
+                        if (item.File.DirectoryName.Equals(dirPath) && item.ToBackUp)
+                        {
+                            Directory.CreateDirectory(dirPath.Replace(init_folder, destination_folder));
+                        }
+                    }
+                }
+                
+                
+                foreach (string newPath in Directory.GetFiles(init_folder, "*.*", SearchOption.AllDirectories))
+                {
+                    foreach (var item in Files)
+                    {
+                        if (item.File.FullName.Equals(newPath) && item.ToBackUp)
+                        {
+                            actualFile = newPath;
+                            backgroundWorker1.ReportProgress(1);
+                            try
+                            {
+                                
+                                if (File.Exists(newPath.Replace(init_folder, destination_folder)))
+                                {
+                                    if (File.GetLastWriteTime(newPath) == File.GetLastWriteTime(newPath.Replace(init_folder, destination_folder)))
+                                    {
+                                        backupInfo.Add(item, Result.NOTNECESSARY);
+                                    }
+                                    else 
+                                    {
+                                        DateTime dateTime = File.GetCreationTime((newPath.Replace(init_folder, destination_folder)));
+                                        if (maxCountOfBackups == 0)
+                                        {
+                                            File.Delete(newPath.Replace(init_folder, destination_folder));
+                                            File.Copy(newPath, newPath.Replace(init_folder, destination_folder));
+                                        }
+                                        else
+                                        {
+                                            if (IsMaximumBackupsAlready(Path.GetFileNameWithoutExtension(newPath), newPath.Replace(init_folder, destination_folder).Substring(0, newPath.Replace(init_folder, destination_folder).LastIndexOf('\\') + 1), item.File.Extension))
+                                            {
+                                                DeleteTheOldestBackup(GetOldBackups(Path.GetFileNameWithoutExtension(newPath), newPath.Replace(init_folder, destination_folder).Substring(0, newPath.Replace(init_folder, destination_folder).LastIndexOf('\\') + 1), item.File.Extension));
+                                                string newName = (Path.GetFileNameWithoutExtension(newPath) + "_" + dateTime.ToString("yyyy-MM-dd-HH-mm-ss") + Path.GetExtension(newPath));
+                                                File.Move(newPath.Replace(init_folder, destination_folder), newPath.Replace(init_folder, destination_folder).Substring(0, newPath.Replace(init_folder, destination_folder).LastIndexOf('\\') + 1) + newName);
+                                                File.Copy(newPath, newPath.Replace(init_folder, destination_folder), false);
+                                            }
+                                            else
+                                            {
+                                                string newName = (Path.GetFileNameWithoutExtension(newPath) + "_" + dateTime.ToString("yyyy-MM-dd-HH-mm-ss") + Path.GetExtension(newPath));
+                                                File.Move(newPath.Replace(init_folder, destination_folder), newPath.Replace(init_folder, destination_folder).Substring(0, newPath.Replace(init_folder, destination_folder).LastIndexOf('\\') + 1) + newName);
+                                                File.Copy(newPath, newPath.Replace(init_folder, destination_folder), false);
+                                            }
+
+                                        }
+                                        backupInfo.Add(item, Result.SUCCESSFULL);
+                                    }
+                                    
+                                }
+                                else
+                                {
+                                    File.Copy(newPath, newPath.Replace(init_folder, destination_folder), false);
+                                    backupInfo.Add(item, Result.SUCCESSFULL);
+                                }
+                            }
+                            catch (Exception)
+                            {
+                                backupInfo.Add(item, Result.ERROR);
+                            }
+                        }
+                    }
+                }
+               
+               backgroundWorker1.ReportProgress(100);
+                
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Unknown error. Make sure, you are not moving files during backup.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            backupProgress.ActualFile = actualFile;
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            backupProgress.Close();
+            ShowBackupResult();
+                     
+        }
+        private void ShowBackupResult()
+        {
+            BackupResult backupResult = new BackupResult(backupInfo, init_folder);            
+            backupResult.Show();
+            this.Close();
         }
     }
 }

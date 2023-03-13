@@ -52,7 +52,7 @@ namespace BP_ZalohovaciNastroj
             // 
             this.lbProjects.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbProjects.FormattingEnabled = true;
-            this.lbProjects.ItemHeight = 12;
+            this.lbProjects.ItemHeight = 17;
             this.lbProjects.Location = new System.Drawing.Point(3, 3);
             this.lbProjects.Name = "lbProjects";
             this.lbProjects.Size = new System.Drawing.Size(129, 575);
@@ -138,7 +138,7 @@ namespace BP_ZalohovaciNastroj
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 12);
+            this.label1.Size = new System.Drawing.Size(63, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Projects:";
             // 
@@ -156,14 +156,14 @@ namespace BP_ZalohovaciNastroj
             // 
             // ShowProject
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1049, 664);
             this.Controls.Add(this.splitContainer1);
-            this.Font = new System.Drawing.Font("Anonymous Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Name = "ShowProject";
             this.Text = "Show project";
-            this.Enter += new System.EventHandler(this.ShowProject_Enter);
+            this.VisibleChanged += new System.EventHandler(this.ShowProject_VisibleChanged);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();

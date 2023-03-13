@@ -35,28 +35,29 @@ namespace BP_ZalohovaciNastroj.View
         {
             if (tbNameProject.Text.Length < 1)
             {
-                MessageBox.Show("Please name your new project.");
-                return;
+                MessageBox.Show("Name of the project is missing.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.DialogResult = DialogResult.None;
+                return;             
             }
             if (!Directory.Exists(tbSaveLocation.Text))
             {
                 Directory.CreateDirectory(tbSaveLocation.Text);
             }
-            if (File.Exists(String.Format("{0}\\{1}.txt", tbSaveLocation.Text, tbNameProject.Text)))
+            if (File.Exists(String.Format("{0}\\{1}.data", tbSaveLocation.Text, tbNameProject.Text)))
             {
                 MessageBox.Show("Project with this name already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.DialogResult = DialogResult.None;
                 return;
             }
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream(String.Format("{0}\\{1}.data", tbSaveLocation.Text, tbNameProject.Text), FileMode.Create, FileAccess.Write);
             formatter.Serialize(stream, project);
             stream.Close();
-            this.Hide();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
         }
     }
 }

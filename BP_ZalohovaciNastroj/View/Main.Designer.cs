@@ -56,7 +56,7 @@ namespace BP_ZalohovaciNastroj
             // B_ShowProjects
             // 
             this.B_ShowProjects.Dock = System.Windows.Forms.DockStyle.Top;
-            this.B_ShowProjects.Font = new System.Drawing.Font("Anonymous Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.B_ShowProjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.B_ShowProjects.Location = new System.Drawing.Point(0, 94);
             this.B_ShowProjects.Name = "B_ShowProjects";
             this.B_ShowProjects.Size = new System.Drawing.Size(135, 36);
@@ -68,7 +68,7 @@ namespace BP_ZalohovaciNastroj
             // B_NewProject
             // 
             this.B_NewProject.Dock = System.Windows.Forms.DockStyle.Top;
-            this.B_NewProject.Font = new System.Drawing.Font("Anonymous Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.B_NewProject.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.B_NewProject.Location = new System.Drawing.Point(0, 58);
             this.B_NewProject.Name = "B_NewProject";
             this.B_NewProject.Size = new System.Drawing.Size(135, 36);
@@ -80,7 +80,7 @@ namespace BP_ZalohovaciNastroj
             // B_Recovery
             // 
             this.B_Recovery.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.B_Recovery.Font = new System.Drawing.Font("Anonymous Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.B_Recovery.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.B_Recovery.Location = new System.Drawing.Point(0, 667);
             this.B_Recovery.Name = "B_Recovery";
             this.B_Recovery.Size = new System.Drawing.Size(135, 36);
@@ -102,10 +102,10 @@ namespace BP_ZalohovaciNastroj
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Anonymous Pro", 14F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(34, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 40);
+            this.label1.Size = new System.Drawing.Size(93, 58);
             this.label1.TabIndex = 0;
             this.label1.Text = "Backup\r\ntool";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -120,14 +120,15 @@ namespace BP_ZalohovaciNastroj
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1218, 703);
             this.Controls.Add(this.P_Main);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Anonymous Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Backup Tool";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

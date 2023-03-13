@@ -54,13 +54,13 @@ namespace BP_ZalohovaciNastroj
             Filter newFilter;
             if(TV_FiltersView.SelectedNode == null)
             {
-                MessageBox.Show("Choose an aggregation filter", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Choose an aggregation filter.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (!(TV_FiltersView.SelectedNode.Tag is AggregationFilter))
             {
-                MessageBox.Show("You can add a filter only for Aggregation filter", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("You can add a filter only for Aggregation filter.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
                         
@@ -144,7 +144,7 @@ namespace BP_ZalohovaciNastroj
             }
             else
             {
-                MessageBox.Show("Please choose an aggregation operand.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please choose an aggregation operand.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
             return new AggregationFilter(ChB_Negate.Checked, TB_NameOfFilter.Text, Ao, new List<Filter>());
@@ -154,7 +154,7 @@ namespace BP_ZalohovaciNastroj
         {
             if(TB_PathRegex.Text.Length == 0)
             {
-                MessageBox.Show("Please fill the Regex first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please fill the Regex", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
             return new FilePathFilter(ChB_Negate.Checked, TB_NameOfFilter.Text, TB_PathRegex.Text);
@@ -169,7 +169,7 @@ namespace BP_ZalohovaciNastroj
             }
             if(count == 0)
             {
-                MessageBox.Show("Please choose a file attribute first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please choose a file attribute.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
             int lastIndex = 0;
@@ -196,7 +196,7 @@ namespace BP_ZalohovaciNastroj
                 beforeAfter = BeforeAfter.AFTER;
             else
             {
-                MessageBox.Show("Please choose the comparing first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please choose the comparing.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
 
@@ -209,7 +209,7 @@ namespace BP_ZalohovaciNastroj
                 flag = Flag.LASTACCESS;
             else
             {
-                MessageBox.Show("Please choose the file flag first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please choose the file flag.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
             return new DateTimeFilter(ChB_Negate.Checked, TB_NameOfFilter.Text, beforeAfter, DTP_Date.Value, flag);
@@ -224,7 +224,7 @@ namespace BP_ZalohovaciNastroj
                 largerSmaller = LargerSmaller.SMALLER;
             else
             {
-                MessageBox.Show("Please choose the comparing first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please choose the comparing.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
             Unit unit;
@@ -238,7 +238,7 @@ namespace BP_ZalohovaciNastroj
                 unit = Unit.GB;
             else
             {
-                MessageBox.Show("Please choose an unit of size first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please choose an unit of size.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
             return new SizeFilter(ChB_Negate.Checked, TB_NameOfFilter.Text, Decimal.ToDouble(NUD_Number.Value), largerSmaller, unit);
@@ -265,7 +265,7 @@ namespace BP_ZalohovaciNastroj
             TreeNode selectedNode = this.TV_FiltersView.SelectedNode;
             if (selectedNode == null)
             {
-                MessageBox.Show("Pick a filter you want to delete.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Pick a filter you want to delete.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             Filter selectedFilter = (Filter)selectedNode.Tag;
@@ -424,12 +424,12 @@ namespace BP_ZalohovaciNastroj
         {
             if (TV_FiltersView.SelectedNode == null)
             {
-                MessageBox.Show("Select a node you want to edit first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Select a node you want to edit.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if(TV_FiltersView.SelectedNode.Nodes.Count > 0 && TC_Filters.SelectedIndex != 0)
             {
-                MessageBox.Show("Delete subfilters first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Delete subfilters first.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             string negateText = "";
@@ -560,7 +560,10 @@ namespace BP_ZalohovaciNastroj
         private void btnCreateNewProject_Click(object sender, EventArgs e)
         {
             NewProjectDialog newProjectDialog = new NewProjectDialog(project);
-            newProjectDialog.Show();
+            if (newProjectDialog.ShowDialog() == DialogResult.OK) 
+            {
+                MessageBox.Show("The new project has been successfully created.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
         public void RefreshFilters() 
         {

@@ -39,8 +39,8 @@ namespace BP_ZalohovaciNastroj
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -82,7 +82,7 @@ namespace BP_ZalohovaciNastroj
             this.lvw.HideSelection = false;
             this.lvw.Location = new System.Drawing.Point(0, 0);
             this.lvw.Name = "lvw";
-            this.lvw.Size = new System.Drawing.Size(549, 298);
+            this.lvw.Size = new System.Drawing.Size(549, 254);
             this.lvw.SmallImageList = this.dotList;
             this.lvw.TabIndex = 6;
             this.lvw.UseCompatibleStateImageBehavior = false;
@@ -127,10 +127,10 @@ namespace BP_ZalohovaciNastroj
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Anonymous Pro", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.Location = new System.Drawing.Point(7, 6);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.Size = new System.Drawing.Size(70, 18);
             this.label2.TabIndex = 9;
             this.label2.Text = "Folders:";
             // 
@@ -144,16 +144,6 @@ namespace BP_ZalohovaciNastroj
             this.panel2.Padding = new System.Windows.Forms.Padding(10, 22, 10, 9);
             this.panel2.Size = new System.Drawing.Size(569, 415);
             this.panel2.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Anonymous Pro", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(7, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Files:";
             // 
             // splitContainer2
             // 
@@ -172,16 +162,26 @@ namespace BP_ZalohovaciNastroj
             this.splitContainer2.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.splitContainer2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.splitContainer2.Size = new System.Drawing.Size(549, 384);
-            this.splitContainer2.SplitterDistance = 298;
+            this.splitContainer2.SplitterDistance = 254;
             this.splitContainer2.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(7, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 18);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Files:";
             // 
             // RecoveryResult
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 415);
             this.Controls.Add(this.splitContainer1);
-            this.Font = new System.Drawing.Font("Anonymous Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Name = "RecoveryResult";
             this.Text = "Recovery result";
             this.Load += new System.EventHandler(this.RecoveryResult_Load);

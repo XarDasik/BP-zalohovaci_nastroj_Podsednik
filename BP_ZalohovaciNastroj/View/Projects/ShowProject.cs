@@ -84,7 +84,7 @@ namespace BP_ZalohovaciNastroj
         {
             if (lbProjects.SelectedItems.Count != 1)
             {
-                MessageBox.Show("Select a project you want to delete.");
+                MessageBox.Show("Select a project you want to delete.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
                
@@ -106,6 +106,11 @@ namespace BP_ZalohovaciNastroj
         }
 
         private void ShowProject_Enter(object sender, EventArgs e)
+        {
+            RefreshLbProjects();
+        }
+
+        private void ShowProject_VisibleChanged(object sender, EventArgs e)
         {
             RefreshLbProjects();
         }
