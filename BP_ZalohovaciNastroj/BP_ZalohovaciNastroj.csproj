@@ -64,6 +64,12 @@
     <Compile Include="View\Backup\Legends\BackupLegendResult.Designer.cs">
       <DependentUpon>BackupLegendResult.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Backup\ProgressWindows\BackupProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Backup\ProgressWindows\BackupProgress.Designer.cs">
+      <DependentUpon>BackupProgress.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Recovery\CopyFileDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Backup\Legends\BackupLegendResult.resx">
       <DependentUpon>BackupLegendResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Backup\ProgressWindows\BackupProgress.resx">
+      <DependentUpon>BackupProgress.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Recovery\CopyFileDialog.resx">
       <DependentUpon>CopyFileDialog.cs</DependentUpon>
