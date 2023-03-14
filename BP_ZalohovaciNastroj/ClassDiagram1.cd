@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BP_ZalohovaciNastroj.Main" Collapsed="true">
+    <Position X="6.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAACAAABAACACABgCWAAAABAgAAAAAARABAAA=</HashCode>
+      <FileName>View\Main.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BP_ZalohovaciNastroj.Backup" Collapsed="true">
+    <Position X="4.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAACAxRCSWYBlDRwEgioQCQDnEwYkTIgCgBIA4bMAiQ=</HashCode>
+      <FileName>View\Backup\Backup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BP_ZalohovaciNastroj.AggregationFilter">
+    <Position X="1.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAEAYAAAAAAAAAAAAAQAAAAAAAAIAA=</HashCode>
+      <FileName>Filters\AggregationFilter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BP_ZalohovaciNastroj.Extensions">
+    <Position X="12.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Filters\Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BP_ZalohovaciNastroj.FilePathFilter">
+    <Position X="8.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAEAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Filters\FilePathFilter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BP_ZalohovaciNastroj.Filter" Collapsed="true">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAQAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Filters\Filter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BP_ZalohovaciNastroj.FilterManager">
+    <Position X="14.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIQ=</HashCode>
+      <FileName>Filters\FilterManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BP_ZalohovaciNastroj.SizeFilter">
+    <Position X="10.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAEIQAAAAAAAAAMAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Filters\SizeFilter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BP_ZalohovaciNastroj.Filters.AttributeFilter">
+    <Position X="6.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAQAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Filters\AttributeFilter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BP_ZalohovaciNastroj.Filters.DateTimeFilter">
+    <Position X="4" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEoEAQAAAACAAAAAAAQAAAgAAAAAAAA=</HashCode>
+      <FileName>Filters\DateTimeFilter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BP_ZalohovaciNastroj.MyFile" Collapsed="true">
+    <Position X="10.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAEAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\MyFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BP_ZalohovaciNastroj.Project" Collapsed="true">
+    <Position X="12" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIABAAAAAEEAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Project.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BP_ZalohovaciNastroj.FilterResult" Collapsed="true">
+    <Position X="9.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EQQAIABAcChhAHIYgICACACHEiQggQQDAEEAAYIAAYE=</HashCode>
+      <FileName>View\Backup\BackupFilterResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BP_ZalohovaciNastroj.BackupResult" Collapsed="true">
+    <Position X="12.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAIEAAAChgADAYAACAAAAGAhAABQABAECAAYIAAQE=</HashCode>
+      <FileName>View\Backup\BackupResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BP_ZalohovaciNastroj.ShowProject" Collapsed="true">
+    <Position X="11" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AADAAAAAADEAARAAKACQQAACCAAQAQAAACAAgQAIAAA=</HashCode>
+      <FileName>View\Projects\ShowProject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BP_ZalohovaciNastroj.CopyFileDialog" Collapsed="true">
+    <Position X="7.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAEAgEKQEABQhQAKBIAASAMABBACAAAABAYAAAAA=</HashCode>
+      <FileName>View\Recovery\CopyFileDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BP_ZalohovaciNastroj.Recovery" Collapsed="true">
+    <Position X="12.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAQCQAAJAAFADQCggCCAAgCAAAAABAA5AAAgA=</HashCode>
+      <FileName>View\Recovery\Recovery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BP_ZalohovaciNastroj.RecoveryResult" Collapsed="true">
+    <Position X="9.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAIEAAAChgADAYBACACABGAgAABQABAEAAAYIACQE=</HashCode>
+      <FileName>View\Recovery\RecoveryResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BP_ZalohovaciNastroj.View.Backup.BackupLegendFilterResult" Collapsed="true">
+    <Position X="7.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAECAAABAAAACAAAACAgAAAAJBIEAAAAIAAAA=</HashCode>
+      <FileName>View\Backup\Legends\BackupLegendFilterResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BP_ZalohovaciNastroj.View.Backup.Legends.BackupLegendResult" Collapsed="true">
+    <Position X="9.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAQAECAAABAAAACAAAACAgAAAAJBIEAAAAIAAAA=</HashCode>
+      <FileName>View\Backup\Legends\BackupLegendResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BP_ZalohovaciNastroj.View.Backup.ProgressWindows.BackupProgress" Collapsed="true">
+    <Position X="11" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAEARACAAABAAAACAAAADAAEAAAAAAAAAAAACBAA=</HashCode>
+      <FileName>View\Backup\ProgressWindows\BackupProgress.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BP_ZalohovaciNastroj.View.NewProjectDialog" Collapsed="true">
+    <Position X="11" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAACBAABEAEACAAEACAAgABAAAAABAAYAAAgA=</HashCode>
+      <FileName>View\Projects\NewProjectDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BP_ZalohovaciNastroj.View.Recovery.RecoveryLegend" Collapsed="true">
+    <Position X="7.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAQAECAAABAAAACAAAACAgAAAAJBIEAAAAIAAAA=</HashCode>
+      <FileName>View\Recovery\RecoveryLegend.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="BP_ZalohovaciNastroj.TypeOfFilter" Collapsed="true">
+    <Position X="15.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAQAAABAAAACAgA=</HashCode>
+      <FileName>View\Backup\Backup.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BP_ZalohovaciNastroj.LargerSmaller" Collapsed="true">
+    <Position X="14.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAABAAAAA=</HashCode>
+      <FileName>Filters\SizeFilter.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BP_ZalohovaciNastroj.Unit" Collapsed="true">
+    <Position X="16.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAIAg=</HashCode>
+      <FileName>Filters\SizeFilter.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BP_ZalohovaciNastroj.Filters.Attribute" Collapsed="true">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAgAAAAAACAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Filters\AttributeFilter.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BP_ZalohovaciNastroj.Filters.BeforeAfter" Collapsed="true">
+    <Position X="16.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABABAAAAAAAA=</HashCode>
+      <FileName>Filters\DateTimeFilter.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BP_ZalohovaciNastroj.Filters.Flag" Collapsed="true">
+    <Position X="12.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Filters\DateTimeFilter.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BP_ZalohovaciNastroj.AggregationOperand" Collapsed="true">
+    <Position X="18" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Filters\Enums\AggregationOperandEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BP_ZalohovaciNastroj.Result" Collapsed="true">
+    <Position X="18" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgABAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Filters\Enums\BackUpResultEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
