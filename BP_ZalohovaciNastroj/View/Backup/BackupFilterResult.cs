@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -34,6 +35,7 @@ namespace BP_ZalohovaciNastroj
         BackupProgress backupProgress = new BackupProgress();
         Dictionary<MyFile, Result> backupInfo = new Dictionary<MyFile, Result>();
         private string actualFile;
+        
 
         public FilterResult(MyFile[] files, TreeView filters,string init_folder, string destination_folder, int maxCountOfBackups)
         {
@@ -54,9 +56,6 @@ namespace BP_ZalohovaciNastroj
             BackupLegend.Dock = DockStyle.Fill;
             BackupLegend.Show();
             splitContainer3.Panel2.Controls.Add(BackupLegend);
-
-            backgroundWorker1.WorkerReportsProgress = true;
-            backgroundWorker1.WorkerSupportsCancellation = true;
         }
         private void InitTvw()
         {            

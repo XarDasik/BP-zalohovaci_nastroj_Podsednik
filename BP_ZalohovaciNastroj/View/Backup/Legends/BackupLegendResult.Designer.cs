@@ -62,76 +62,68 @@ namespace BP_ZalohovaciNastroj.View.Backup.Legends
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(399, 11);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(299, 8);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(87, 16);
+            this.label7.Size = new System.Drawing.Size(77, 12);
             this.label7.TabIndex = 35;
             this.label7.Text = "Empty Folder";
             // 
             // pb_gray
             // 
-            this.pb_gray.Location = new System.Drawing.Point(368, 11);
-            this.pb_gray.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pb_gray.Location = new System.Drawing.Point(276, 8);
             this.pb_gray.Name = "pb_gray";
-            this.pb_gray.Size = new System.Drawing.Size(23, 16);
+            this.pb_gray.Size = new System.Drawing.Size(17, 12);
             this.pb_gray.TabIndex = 34;
             this.pb_gray.TabStop = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(37, 39);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(28, 30);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(279, 16);
+            this.label6.Size = new System.Drawing.Size(263, 12);
             this.label6.TabIndex = 33;
             this.label6.Text = "All Subfolders and Files have been backuped";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(37, 11);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(28, 8);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(188, 16);
+            this.label4.Size = new System.Drawing.Size(179, 12);
             this.label4.TabIndex = 29;
             this.label4.Text = "Not backuped Folders or Files";
             // 
             // pb_green
             // 
-            this.pb_green.Location = new System.Drawing.Point(7, 39);
-            this.pb_green.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pb_green.Location = new System.Drawing.Point(5, 30);
             this.pb_green.Name = "pb_green";
-            this.pb_green.Size = new System.Drawing.Size(23, 16);
+            this.pb_green.Size = new System.Drawing.Size(17, 12);
             this.pb_green.TabIndex = 32;
             this.pb_green.TabStop = false;
             // 
             // pb_red
             // 
-            this.pb_red.Location = new System.Drawing.Point(7, 11);
-            this.pb_red.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pb_red.Location = new System.Drawing.Point(5, 8);
             this.pb_red.Name = "pb_red";
-            this.pb_red.Size = new System.Drawing.Size(23, 16);
+            this.pb_red.Size = new System.Drawing.Size(17, 12);
             this.pb_red.TabIndex = 28;
             this.pb_red.TabStop = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(37, 66);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(28, 50);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(293, 16);
+            this.label5.Size = new System.Drawing.Size(281, 12);
             this.label5.TabIndex = 31;
             this.label5.Text = "Partially Folders and Files have been backuped";
             // 
             // pb_yellow
             // 
-            this.pb_yellow.Location = new System.Drawing.Point(7, 66);
-            this.pb_yellow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pb_yellow.Location = new System.Drawing.Point(5, 50);
             this.pb_yellow.Name = "pb_yellow";
-            this.pb_yellow.Size = new System.Drawing.Size(23, 16);
+            this.pb_yellow.Size = new System.Drawing.Size(17, 12);
             this.pb_yellow.TabIndex = 30;
             this.pb_yellow.TabStop = false;
             // 
@@ -148,19 +140,17 @@ namespace BP_ZalohovaciNastroj.View.Backup.Legends
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(399, 39);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(299, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 16);
+            this.label1.Size = new System.Drawing.Size(35, 12);
             this.label1.TabIndex = 37;
             this.label1.Text = "Error";
             // 
             // pb_error
             // 
-            this.pb_error.Location = new System.Drawing.Point(368, 39);
-            this.pb_error.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pb_error.Location = new System.Drawing.Point(276, 30);
             this.pb_error.Name = "pb_error";
-            this.pb_error.Size = new System.Drawing.Size(23, 16);
+            this.pb_error.Size = new System.Drawing.Size(17, 12);
             this.pb_error.TabIndex = 36;
             this.pb_error.TabStop = false;
             // 
@@ -175,65 +165,59 @@ namespace BP_ZalohovaciNastroj.View.Backup.Legends
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 94);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(28, 70);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 16);
+            this.label2.Size = new System.Drawing.Size(149, 12);
             this.label2.TabIndex = 39;
             this.label2.Text = "Error has occured (File)";
             // 
             // pb_RedFile
             // 
-            this.pb_RedFile.Location = new System.Drawing.Point(7, 92);
-            this.pb_RedFile.Margin = new System.Windows.Forms.Padding(4);
+            this.pb_RedFile.Location = new System.Drawing.Point(5, 69);
             this.pb_RedFile.Name = "pb_RedFile";
-            this.pb_RedFile.Size = new System.Drawing.Size(23, 20);
+            this.pb_RedFile.Size = new System.Drawing.Size(17, 15);
             this.pb_RedFile.TabIndex = 38;
             this.pb_RedFile.TabStop = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(37, 121);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(28, 90);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 16);
+            this.label3.Size = new System.Drawing.Size(107, 12);
             this.label3.TabIndex = 41;
             this.label3.Text = "Successful (File)";
             // 
             // pb_GreenFile
             // 
-            this.pb_GreenFile.Location = new System.Drawing.Point(7, 119);
-            this.pb_GreenFile.Margin = new System.Windows.Forms.Padding(4);
+            this.pb_GreenFile.Location = new System.Drawing.Point(5, 90);
             this.pb_GreenFile.Name = "pb_GreenFile";
-            this.pb_GreenFile.Size = new System.Drawing.Size(23, 20);
+            this.pb_GreenFile.Size = new System.Drawing.Size(17, 15);
             this.pb_GreenFile.TabIndex = 40;
             this.pb_GreenFile.TabStop = false;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(399, 94);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(299, 70);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(127, 16);
+            this.label8.Size = new System.Drawing.Size(125, 12);
             this.label8.TabIndex = 43;
             this.label8.Text = "Not necessary (File)";
             // 
             // pb_GrayFile
             // 
-            this.pb_GrayFile.Location = new System.Drawing.Point(369, 92);
-            this.pb_GrayFile.Margin = new System.Windows.Forms.Padding(4);
+            this.pb_GrayFile.Location = new System.Drawing.Point(277, 69);
             this.pb_GrayFile.Name = "pb_GrayFile";
-            this.pb_GrayFile.Size = new System.Drawing.Size(23, 20);
+            this.pb_GrayFile.Size = new System.Drawing.Size(17, 15);
             this.pb_GrayFile.TabIndex = 42;
             this.pb_GrayFile.TabStop = false;
             // 
             // BackupLegendResult
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(545, 167);
+            this.ClientSize = new System.Drawing.Size(438, 126);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.pb_GrayFile);
             this.Controls.Add(this.label3);
@@ -250,7 +234,7 @@ namespace BP_ZalohovaciNastroj.View.Backup.Legends
             this.Controls.Add(this.pb_yellow);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pb_error);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Font = new System.Drawing.Font("Anonymous Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Name = "BackupLegendResult";
             this.Text = "BackupLegendResult";
             ((System.ComponentModel.ISupportInitialize)(this.pb_gray)).EndInit();

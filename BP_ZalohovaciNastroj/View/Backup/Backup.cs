@@ -1,5 +1,6 @@
 ﻿using BP_ZalohovaciNastroj.Filters;
 using BP_ZalohovaciNastroj.View;
+using BP_ZalohovaciNastroj.View.Backup.ProgressWindows;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -510,16 +511,21 @@ namespace BP_ZalohovaciNastroj
                 MessageBox.Show("The Root path doesn't exist. Please select a valid path.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            SimulateBackup();                        
+               
+        }
 
+        private void SimulateBackup() 
+        {
+            var dir = new DirectoryInfo(TB_RootPath.Text);
             FileInfo[] temp = dir.GetFiles("*.*", SearchOption.AllDirectories);
             project.FilterManager.Files = project.FilterManager.ConvertToMyFile(temp);
             project.FilterManager.AggregationFilter = project.MainFilter;
             project.FilterManager.applyFilter(project);
             TreeView FiltersClone = CopyTreeView(TV_FiltersView);
-            
-            FilterResult tempForm = new FilterResult(project.FilterManager.Files.ToArray(), FiltersClone, TB_RootPath.Text, TB_DestinationPath.Text, Convert.ToInt32(NUD_NumberOfBackups.Value));
-            tempForm.Show();          
-               
+
+            FilterResult filterResult = new FilterResult(project.FilterManager.Files.ToArray(), FiltersClone, TB_RootPath.Text, TB_DestinationPath.Text, Convert.ToInt32(NUD_NumberOfBackups.Value));
+            filterResult.Show();
         }
         private TreeView CopyTreeView(TreeView Original)
         {

@@ -49,17 +49,19 @@ namespace BP_ZalohovaciNastroj
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(135, 703);
+            this.panel1.Size = new System.Drawing.Size(101, 497);
             this.panel1.TabIndex = 0;
             // 
             // B_ShowProjects
             // 
             this.B_ShowProjects.Dock = System.Windows.Forms.DockStyle.Top;
-            this.B_ShowProjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.B_ShowProjects.Location = new System.Drawing.Point(0, 94);
+            this.B_ShowProjects.Font = new System.Drawing.Font("Anonymous Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.B_ShowProjects.Location = new System.Drawing.Point(0, 77);
+            this.B_ShowProjects.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.B_ShowProjects.Name = "B_ShowProjects";
-            this.B_ShowProjects.Size = new System.Drawing.Size(135, 36);
+            this.B_ShowProjects.Size = new System.Drawing.Size(101, 26);
             this.B_ShowProjects.TabIndex = 2;
             this.B_ShowProjects.Text = "My Projects";
             this.B_ShowProjects.UseVisualStyleBackColor = true;
@@ -68,10 +70,11 @@ namespace BP_ZalohovaciNastroj
             // B_NewProject
             // 
             this.B_NewProject.Dock = System.Windows.Forms.DockStyle.Top;
-            this.B_NewProject.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.B_NewProject.Location = new System.Drawing.Point(0, 58);
+            this.B_NewProject.Font = new System.Drawing.Font("Anonymous Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.B_NewProject.Location = new System.Drawing.Point(0, 51);
+            this.B_NewProject.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.B_NewProject.Name = "B_NewProject";
-            this.B_NewProject.Size = new System.Drawing.Size(135, 36);
+            this.B_NewProject.Size = new System.Drawing.Size(101, 26);
             this.B_NewProject.TabIndex = 1;
             this.B_NewProject.Text = "New project";
             this.B_NewProject.UseVisualStyleBackColor = true;
@@ -80,10 +83,11 @@ namespace BP_ZalohovaciNastroj
             // B_Recovery
             // 
             this.B_Recovery.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.B_Recovery.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.B_Recovery.Location = new System.Drawing.Point(0, 667);
+            this.B_Recovery.Font = new System.Drawing.Font("Anonymous Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.B_Recovery.Location = new System.Drawing.Point(0, 471);
+            this.B_Recovery.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.B_Recovery.Name = "B_Recovery";
-            this.B_Recovery.Size = new System.Drawing.Size(135, 36);
+            this.B_Recovery.Size = new System.Drawing.Size(101, 26);
             this.B_Recovery.TabIndex = 2;
             this.B_Recovery.Text = "Recovery";
             this.B_Recovery.UseVisualStyleBackColor = true;
@@ -95,17 +99,19 @@ namespace BP_ZalohovaciNastroj
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(135, 58);
+            this.panel2.Size = new System.Drawing.Size(101, 51);
             this.panel2.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(34, 9);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(16, 3);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 58);
+            this.label1.Size = new System.Drawing.Size(73, 48);
             this.label1.TabIndex = 0;
             this.label1.Text = "Backup\r\ntool";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -113,20 +119,22 @@ namespace BP_ZalohovaciNastroj
             // P_Main
             // 
             this.P_Main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.P_Main.Location = new System.Drawing.Point(135, 0);
+            this.P_Main.Location = new System.Drawing.Point(101, 0);
+            this.P_Main.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.P_Main.Name = "P_Main";
-            this.P_Main.Size = new System.Drawing.Size(1083, 703);
+            this.P_Main.Size = new System.Drawing.Size(813, 497);
             this.P_Main.TabIndex = 1;
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1218, 703);
+            this.ClientSize = new System.Drawing.Size(914, 497);
             this.Controls.Add(this.P_Main);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.MinimumSize = new System.Drawing.Size(900, 600);
+            this.Font = new System.Drawing.Font("Anonymous Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimumSize = new System.Drawing.Size(679, 435);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Backup Tool";
