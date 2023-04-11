@@ -90,6 +90,8 @@ namespace BP_ZalohovaciNastroj
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.label6 = new System.Windows.Forms.Label();
             this.GB_GlobalSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_NumberOfBackups)).BeginInit();
             this.GB_FiltersOptions.SuspendLayout();
@@ -129,7 +131,7 @@ namespace BP_ZalohovaciNastroj
             // TB_RootPath
             // 
             this.TB_RootPath.Location = new System.Drawing.Point(115, 11);
-            this.TB_RootPath.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TB_RootPath.Margin = new System.Windows.Forms.Padding(2);
             this.TB_RootPath.Name = "TB_RootPath";
             this.TB_RootPath.Size = new System.Drawing.Size(284, 18);
             this.TB_RootPath.TabIndex = 1;
@@ -141,7 +143,7 @@ namespace BP_ZalohovaciNastroj
             this.B_RootPathLoader.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("B_RootPathLoader.BackgroundImage")));
             this.B_RootPathLoader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.B_RootPathLoader.Location = new System.Drawing.Point(403, 10);
-            this.B_RootPathLoader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.B_RootPathLoader.Margin = new System.Windows.Forms.Padding(2);
             this.B_RootPathLoader.Name = "B_RootPathLoader";
             this.B_RootPathLoader.Size = new System.Drawing.Size(21, 21);
             this.B_RootPathLoader.TabIndex = 2;
@@ -150,6 +152,7 @@ namespace BP_ZalohovaciNastroj
             // 
             // GB_GlobalSettings
             // 
+            this.GB_GlobalSettings.Controls.Add(this.label6);
             this.GB_GlobalSettings.Controls.Add(this.L_RootPath);
             this.GB_GlobalSettings.Controls.Add(this.label4);
             this.GB_GlobalSettings.Controls.Add(this.NUD_NumberOfBackups);
@@ -160,10 +163,10 @@ namespace BP_ZalohovaciNastroj
             this.GB_GlobalSettings.Controls.Add(this.B_RootPathLoader);
             this.GB_GlobalSettings.Dock = System.Windows.Forms.DockStyle.Top;
             this.GB_GlobalSettings.Location = new System.Drawing.Point(0, 0);
-            this.GB_GlobalSettings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GB_GlobalSettings.Margin = new System.Windows.Forms.Padding(2);
             this.GB_GlobalSettings.Name = "GB_GlobalSettings";
-            this.GB_GlobalSettings.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.GB_GlobalSettings.Size = new System.Drawing.Size(703, 65);
+            this.GB_GlobalSettings.Padding = new System.Windows.Forms.Padding(2);
+            this.GB_GlobalSettings.Size = new System.Drawing.Size(703, 74);
             this.GB_GlobalSettings.TabIndex = 3;
             this.GB_GlobalSettings.TabStop = false;
             this.GB_GlobalSettings.Text = "Global settings";
@@ -181,7 +184,7 @@ namespace BP_ZalohovaciNastroj
             // NUD_NumberOfBackups
             // 
             this.NUD_NumberOfBackups.Location = new System.Drawing.Point(599, 10);
-            this.NUD_NumberOfBackups.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NUD_NumberOfBackups.Margin = new System.Windows.Forms.Padding(2);
             this.NUD_NumberOfBackups.Name = "NUD_NumberOfBackups";
             this.NUD_NumberOfBackups.Size = new System.Drawing.Size(90, 18);
             this.NUD_NumberOfBackups.TabIndex = 7;
@@ -200,7 +203,7 @@ namespace BP_ZalohovaciNastroj
             // TB_DestinationPath
             // 
             this.TB_DestinationPath.Location = new System.Drawing.Point(115, 36);
-            this.TB_DestinationPath.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TB_DestinationPath.Margin = new System.Windows.Forms.Padding(2);
             this.TB_DestinationPath.Name = "TB_DestinationPath";
             this.TB_DestinationPath.Size = new System.Drawing.Size(284, 18);
             this.TB_DestinationPath.TabIndex = 4;
@@ -212,7 +215,7 @@ namespace BP_ZalohovaciNastroj
             this.B_DestionationPathLoader.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("B_DestionationPathLoader.BackgroundImage")));
             this.B_DestionationPathLoader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.B_DestionationPathLoader.Location = new System.Drawing.Point(403, 34);
-            this.B_DestionationPathLoader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.B_DestionationPathLoader.Margin = new System.Windows.Forms.Padding(2);
             this.B_DestionationPathLoader.Name = "B_DestionationPathLoader";
             this.B_DestionationPathLoader.Size = new System.Drawing.Size(21, 21);
             this.B_DestionationPathLoader.TabIndex = 5;
@@ -225,7 +228,7 @@ namespace BP_ZalohovaciNastroj
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.B_SimulateBackup.Location = new System.Drawing.Point(3, 35);
-            this.B_SimulateBackup.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.B_SimulateBackup.Margin = new System.Windows.Forms.Padding(2);
             this.B_SimulateBackup.Name = "B_SimulateBackup";
             this.B_SimulateBackup.Size = new System.Drawing.Size(85, 26);
             this.B_SimulateBackup.TabIndex = 6;
@@ -239,10 +242,10 @@ namespace BP_ZalohovaciNastroj
             this.GB_FiltersOptions.Controls.Add(this.panel12);
             this.GB_FiltersOptions.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GB_FiltersOptions.Location = new System.Drawing.Point(0, 0);
-            this.GB_FiltersOptions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GB_FiltersOptions.Margin = new System.Windows.Forms.Padding(2);
             this.GB_FiltersOptions.Name = "GB_FiltersOptions";
-            this.GB_FiltersOptions.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.GB_FiltersOptions.Size = new System.Drawing.Size(424, 404);
+            this.GB_FiltersOptions.Padding = new System.Windows.Forms.Padding(2);
+            this.GB_FiltersOptions.Size = new System.Drawing.Size(424, 395);
             this.GB_FiltersOptions.TabIndex = 5;
             this.GB_FiltersOptions.TabStop = false;
             // 
@@ -251,10 +254,10 @@ namespace BP_ZalohovaciNastroj
             this.panel13.Controls.Add(this.TC_Filters);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel13.Location = new System.Drawing.Point(2, 13);
-            this.panel13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel13.Margin = new System.Windows.Forms.Padding(2);
             this.panel13.Name = "panel13";
             this.panel13.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.panel13.Size = new System.Drawing.Size(420, 359);
+            this.panel13.Size = new System.Drawing.Size(420, 350);
             this.panel13.TabIndex = 11;
             // 
             // TC_Filters
@@ -266,10 +269,10 @@ namespace BP_ZalohovaciNastroj
             this.TC_Filters.Controls.Add(this.TC_Size);
             this.TC_Filters.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TC_Filters.Location = new System.Drawing.Point(8, 7);
-            this.TC_Filters.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TC_Filters.Margin = new System.Windows.Forms.Padding(2);
             this.TC_Filters.Name = "TC_Filters";
             this.TC_Filters.SelectedIndex = 0;
-            this.TC_Filters.Size = new System.Drawing.Size(404, 345);
+            this.TC_Filters.Size = new System.Drawing.Size(404, 336);
             this.TC_Filters.TabIndex = 5;
             // 
             // TC_Aggregation
@@ -277,10 +280,10 @@ namespace BP_ZalohovaciNastroj
             this.TC_Aggregation.Controls.Add(this.RB_OR);
             this.TC_Aggregation.Controls.Add(this.RB_And);
             this.TC_Aggregation.Location = new System.Drawing.Point(4, 21);
-            this.TC_Aggregation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TC_Aggregation.Margin = new System.Windows.Forms.Padding(2);
             this.TC_Aggregation.Name = "TC_Aggregation";
-            this.TC_Aggregation.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.TC_Aggregation.Size = new System.Drawing.Size(396, 320);
+            this.TC_Aggregation.Padding = new System.Windows.Forms.Padding(2);
+            this.TC_Aggregation.Size = new System.Drawing.Size(396, 311);
             this.TC_Aggregation.TabIndex = 0;
             this.TC_Aggregation.Text = "Aggregation";
             this.TC_Aggregation.UseVisualStyleBackColor = true;
@@ -289,7 +292,7 @@ namespace BP_ZalohovaciNastroj
             // 
             this.RB_OR.AutoSize = true;
             this.RB_OR.Location = new System.Drawing.Point(15, 33);
-            this.RB_OR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RB_OR.Margin = new System.Windows.Forms.Padding(2);
             this.RB_OR.Name = "RB_OR";
             this.RB_OR.Size = new System.Drawing.Size(251, 16);
             this.RB_OR.TabIndex = 1;
@@ -301,7 +304,7 @@ namespace BP_ZalohovaciNastroj
             // 
             this.RB_And.AutoSize = true;
             this.RB_And.Location = new System.Drawing.Point(15, 14);
-            this.RB_And.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RB_And.Margin = new System.Windows.Forms.Padding(2);
             this.RB_And.Name = "RB_And";
             this.RB_And.Size = new System.Drawing.Size(209, 16);
             this.RB_And.TabIndex = 0;
@@ -313,11 +316,11 @@ namespace BP_ZalohovaciNastroj
             // 
             this.TC_FilePath.Controls.Add(this.TB_PathRegex);
             this.TC_FilePath.Controls.Add(this.label1);
-            this.TC_FilePath.Location = new System.Drawing.Point(4, 21);
-            this.TC_FilePath.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TC_FilePath.Location = new System.Drawing.Point(4, 22);
+            this.TC_FilePath.Margin = new System.Windows.Forms.Padding(2);
             this.TC_FilePath.Name = "TC_FilePath";
-            this.TC_FilePath.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.TC_FilePath.Size = new System.Drawing.Size(396, 320);
+            this.TC_FilePath.Padding = new System.Windows.Forms.Padding(2);
+            this.TC_FilePath.Size = new System.Drawing.Size(396, 317);
             this.TC_FilePath.TabIndex = 1;
             this.TC_FilePath.Text = "File-Path";
             this.TC_FilePath.UseVisualStyleBackColor = true;
@@ -325,7 +328,7 @@ namespace BP_ZalohovaciNastroj
             // TB_PathRegex
             // 
             this.TB_PathRegex.Location = new System.Drawing.Point(16, 26);
-            this.TB_PathRegex.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TB_PathRegex.Margin = new System.Windows.Forms.Padding(2);
             this.TB_PathRegex.Name = "TB_PathRegex";
             this.TB_PathRegex.Size = new System.Drawing.Size(236, 18);
             this.TB_PathRegex.TabIndex = 1;
@@ -347,11 +350,11 @@ namespace BP_ZalohovaciNastroj
             this.TC_Attribute.Controls.Add(this.CHB_ReadOnly);
             this.TC_Attribute.Controls.Add(this.CHB_Archive);
             this.TC_Attribute.Controls.Add(this.label2);
-            this.TC_Attribute.Location = new System.Drawing.Point(4, 21);
-            this.TC_Attribute.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TC_Attribute.Location = new System.Drawing.Point(4, 22);
+            this.TC_Attribute.Margin = new System.Windows.Forms.Padding(2);
             this.TC_Attribute.Name = "TC_Attribute";
-            this.TC_Attribute.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.TC_Attribute.Size = new System.Drawing.Size(396, 320);
+            this.TC_Attribute.Padding = new System.Windows.Forms.Padding(2);
+            this.TC_Attribute.Size = new System.Drawing.Size(396, 317);
             this.TC_Attribute.TabIndex = 2;
             this.TC_Attribute.Text = "Attribute";
             this.TC_Attribute.UseVisualStyleBackColor = true;
@@ -360,7 +363,7 @@ namespace BP_ZalohovaciNastroj
             // 
             this.CHB_IsDirectory.AutoSize = true;
             this.CHB_IsDirectory.Location = new System.Drawing.Point(41, 76);
-            this.CHB_IsDirectory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CHB_IsDirectory.Margin = new System.Windows.Forms.Padding(2);
             this.CHB_IsDirectory.Name = "CHB_IsDirectory";
             this.CHB_IsDirectory.Size = new System.Drawing.Size(96, 16);
             this.CHB_IsDirectory.TabIndex = 9;
@@ -371,7 +374,7 @@ namespace BP_ZalohovaciNastroj
             // 
             this.CHB_System.AutoSize = true;
             this.CHB_System.Location = new System.Drawing.Point(41, 60);
-            this.CHB_System.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CHB_System.Margin = new System.Windows.Forms.Padding(2);
             this.CHB_System.Name = "CHB_System";
             this.CHB_System.Size = new System.Drawing.Size(60, 16);
             this.CHB_System.TabIndex = 8;
@@ -382,7 +385,7 @@ namespace BP_ZalohovaciNastroj
             // 
             this.CHB_ReadOnly.AutoSize = true;
             this.CHB_ReadOnly.Location = new System.Drawing.Point(41, 44);
-            this.CHB_ReadOnly.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CHB_ReadOnly.Margin = new System.Windows.Forms.Padding(2);
             this.CHB_ReadOnly.Name = "CHB_ReadOnly";
             this.CHB_ReadOnly.Size = new System.Drawing.Size(78, 16);
             this.CHB_ReadOnly.TabIndex = 7;
@@ -393,7 +396,7 @@ namespace BP_ZalohovaciNastroj
             // 
             this.CHB_Archive.AutoSize = true;
             this.CHB_Archive.Location = new System.Drawing.Point(42, 29);
-            this.CHB_Archive.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CHB_Archive.Margin = new System.Windows.Forms.Padding(2);
             this.CHB_Archive.Name = "CHB_Archive";
             this.CHB_Archive.Size = new System.Drawing.Size(66, 16);
             this.CHB_Archive.TabIndex = 6;
@@ -417,11 +420,11 @@ namespace BP_ZalohovaciNastroj
             this.TC_DateTime.Controls.Add(this.RB_LastAccessDateTime);
             this.TC_DateTime.Controls.Add(this.RB_LastWriteDateTime);
             this.TC_DateTime.Controls.Add(this.RB_CreationDateTime);
-            this.TC_DateTime.Location = new System.Drawing.Point(4, 21);
-            this.TC_DateTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TC_DateTime.Location = new System.Drawing.Point(4, 22);
+            this.TC_DateTime.Margin = new System.Windows.Forms.Padding(2);
             this.TC_DateTime.Name = "TC_DateTime";
-            this.TC_DateTime.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.TC_DateTime.Size = new System.Drawing.Size(396, 320);
+            this.TC_DateTime.Padding = new System.Windows.Forms.Padding(2);
+            this.TC_DateTime.Size = new System.Drawing.Size(396, 317);
             this.TC_DateTime.TabIndex = 3;
             this.TC_DateTime.Text = "Date-Time";
             this.TC_DateTime.UseVisualStyleBackColor = true;
@@ -434,7 +437,7 @@ namespace BP_ZalohovaciNastroj
             "Before date",
             "After date"});
             this.CB_DateBeforeAfter.Location = new System.Drawing.Point(174, 68);
-            this.CB_DateBeforeAfter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CB_DateBeforeAfter.Margin = new System.Windows.Forms.Padding(2);
             this.CB_DateBeforeAfter.Name = "CB_DateBeforeAfter";
             this.CB_DateBeforeAfter.Size = new System.Drawing.Size(92, 20);
             this.CB_DateBeforeAfter.TabIndex = 4;
@@ -444,7 +447,7 @@ namespace BP_ZalohovaciNastroj
             this.DTP_Date.CustomFormat = "dd.MM.yyyy HH:mm";
             this.DTP_Date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DTP_Date.Location = new System.Drawing.Point(19, 68);
-            this.DTP_Date.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DTP_Date.Margin = new System.Windows.Forms.Padding(2);
             this.DTP_Date.Name = "DTP_Date";
             this.DTP_Date.Size = new System.Drawing.Size(151, 18);
             this.DTP_Date.TabIndex = 3;
@@ -454,7 +457,7 @@ namespace BP_ZalohovaciNastroj
             // 
             this.RB_LastAccessDateTime.AutoSize = true;
             this.RB_LastAccessDateTime.Location = new System.Drawing.Point(19, 43);
-            this.RB_LastAccessDateTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RB_LastAccessDateTime.Margin = new System.Windows.Forms.Padding(2);
             this.RB_LastAccessDateTime.Name = "RB_LastAccessDateTime";
             this.RB_LastAccessDateTime.Size = new System.Drawing.Size(149, 16);
             this.RB_LastAccessDateTime.TabIndex = 2;
@@ -466,7 +469,7 @@ namespace BP_ZalohovaciNastroj
             // 
             this.RB_LastWriteDateTime.AutoSize = true;
             this.RB_LastWriteDateTime.Location = new System.Drawing.Point(19, 29);
-            this.RB_LastWriteDateTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RB_LastWriteDateTime.Margin = new System.Windows.Forms.Padding(2);
             this.RB_LastWriteDateTime.Name = "RB_LastWriteDateTime";
             this.RB_LastWriteDateTime.Size = new System.Drawing.Size(143, 16);
             this.RB_LastWriteDateTime.TabIndex = 1;
@@ -478,7 +481,7 @@ namespace BP_ZalohovaciNastroj
             // 
             this.RB_CreationDateTime.AutoSize = true;
             this.RB_CreationDateTime.Location = new System.Drawing.Point(19, 14);
-            this.RB_CreationDateTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RB_CreationDateTime.Margin = new System.Windows.Forms.Padding(2);
             this.RB_CreationDateTime.Name = "RB_CreationDateTime";
             this.RB_CreationDateTime.Size = new System.Drawing.Size(131, 16);
             this.RB_CreationDateTime.TabIndex = 0;
@@ -492,11 +495,11 @@ namespace BP_ZalohovaciNastroj
             this.TC_Size.Controls.Add(this.NUD_Number);
             this.TC_Size.Controls.Add(this.RB_Maximal);
             this.TC_Size.Controls.Add(this.RB_Minimal);
-            this.TC_Size.Location = new System.Drawing.Point(4, 21);
-            this.TC_Size.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TC_Size.Location = new System.Drawing.Point(4, 22);
+            this.TC_Size.Margin = new System.Windows.Forms.Padding(2);
             this.TC_Size.Name = "TC_Size";
-            this.TC_Size.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.TC_Size.Size = new System.Drawing.Size(396, 320);
+            this.TC_Size.Padding = new System.Windows.Forms.Padding(2);
+            this.TC_Size.Size = new System.Drawing.Size(396, 317);
             this.TC_Size.TabIndex = 4;
             this.TC_Size.Text = "Size";
             this.TC_Size.UseVisualStyleBackColor = true;
@@ -508,7 +511,7 @@ namespace BP_ZalohovaciNastroj
             this.panel1.Controls.Add(this.RB_Size_kB);
             this.panel1.Controls.Add(this.RB_Size_GB);
             this.panel1.Location = new System.Drawing.Point(115, 55);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(45, 65);
             this.panel1.TabIndex = 9;
@@ -517,7 +520,7 @@ namespace BP_ZalohovaciNastroj
             // 
             this.RB_Size_B.AutoSize = true;
             this.RB_Size_B.Location = new System.Drawing.Point(2, 2);
-            this.RB_Size_B.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RB_Size_B.Margin = new System.Windows.Forms.Padding(2);
             this.RB_Size_B.Name = "RB_Size_B";
             this.RB_Size_B.Size = new System.Drawing.Size(29, 16);
             this.RB_Size_B.TabIndex = 2;
@@ -529,7 +532,7 @@ namespace BP_ZalohovaciNastroj
             // 
             this.RB_Size_MB.AutoSize = true;
             this.RB_Size_MB.Location = new System.Drawing.Point(2, 31);
-            this.RB_Size_MB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RB_Size_MB.Margin = new System.Windows.Forms.Padding(2);
             this.RB_Size_MB.Name = "RB_Size_MB";
             this.RB_Size_MB.Size = new System.Drawing.Size(35, 16);
             this.RB_Size_MB.TabIndex = 4;
@@ -541,7 +544,7 @@ namespace BP_ZalohovaciNastroj
             // 
             this.RB_Size_kB.AutoSize = true;
             this.RB_Size_kB.Location = new System.Drawing.Point(2, 17);
-            this.RB_Size_kB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RB_Size_kB.Margin = new System.Windows.Forms.Padding(2);
             this.RB_Size_kB.Name = "RB_Size_kB";
             this.RB_Size_kB.Size = new System.Drawing.Size(35, 16);
             this.RB_Size_kB.TabIndex = 3;
@@ -553,7 +556,7 @@ namespace BP_ZalohovaciNastroj
             // 
             this.RB_Size_GB.AutoSize = true;
             this.RB_Size_GB.Location = new System.Drawing.Point(2, 46);
-            this.RB_Size_GB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RB_Size_GB.Margin = new System.Windows.Forms.Padding(2);
             this.RB_Size_GB.Name = "RB_Size_GB";
             this.RB_Size_GB.Size = new System.Drawing.Size(35, 16);
             this.RB_Size_GB.TabIndex = 5;
@@ -564,7 +567,7 @@ namespace BP_ZalohovaciNastroj
             // NUD_Number
             // 
             this.NUD_Number.Location = new System.Drawing.Point(20, 55);
-            this.NUD_Number.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NUD_Number.Margin = new System.Windows.Forms.Padding(2);
             this.NUD_Number.Name = "NUD_Number";
             this.NUD_Number.Size = new System.Drawing.Size(90, 18);
             this.NUD_Number.TabIndex = 7;
@@ -573,7 +576,7 @@ namespace BP_ZalohovaciNastroj
             // 
             this.RB_Maximal.AutoSize = true;
             this.RB_Maximal.Location = new System.Drawing.Point(20, 33);
-            this.RB_Maximal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RB_Maximal.Margin = new System.Windows.Forms.Padding(2);
             this.RB_Maximal.Name = "RB_Maximal";
             this.RB_Maximal.Size = new System.Drawing.Size(95, 16);
             this.RB_Maximal.TabIndex = 1;
@@ -585,7 +588,7 @@ namespace BP_ZalohovaciNastroj
             this.RB_Minimal.AutoSize = true;
             this.RB_Minimal.Checked = true;
             this.RB_Minimal.Location = new System.Drawing.Point(20, 14);
-            this.RB_Minimal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RB_Minimal.Margin = new System.Windows.Forms.Padding(2);
             this.RB_Minimal.Name = "RB_Minimal";
             this.RB_Minimal.Size = new System.Drawing.Size(95, 16);
             this.RB_Minimal.TabIndex = 0;
@@ -600,8 +603,8 @@ namespace BP_ZalohovaciNastroj
             this.panel12.Controls.Add(this.ChB_Negate);
             this.panel12.Controls.Add(this.label3);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel12.Location = new System.Drawing.Point(2, 372);
-            this.panel12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel12.Location = new System.Drawing.Point(2, 363);
+            this.panel12.Margin = new System.Windows.Forms.Padding(2);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(420, 30);
             this.panel12.TabIndex = 10;
@@ -609,10 +612,10 @@ namespace BP_ZalohovaciNastroj
             // btnCreateNewProject
             // 
             this.btnCreateNewProject.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCreateNewProject.Location = new System.Drawing.Point(294, 2);
-            this.btnCreateNewProject.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCreateNewProject.Location = new System.Drawing.Point(264, 2);
+            this.btnCreateNewProject.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreateNewProject.Name = "btnCreateNewProject";
-            this.btnCreateNewProject.Size = new System.Drawing.Size(114, 26);
+            this.btnCreateNewProject.Size = new System.Drawing.Size(144, 26);
             this.btnCreateNewProject.TabIndex = 8;
             this.btnCreateNewProject.Text = "Create a new project";
             this.btnCreateNewProject.UseVisualStyleBackColor = true;
@@ -620,19 +623,17 @@ namespace BP_ZalohovaciNastroj
             // 
             // TB_NameOfFilter
             // 
-            this.TB_NameOfFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.TB_NameOfFilter.Location = new System.Drawing.Point(189, 6);
-            this.TB_NameOfFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TB_NameOfFilter.Location = new System.Drawing.Point(160, 6);
+            this.TB_NameOfFilter.Margin = new System.Windows.Forms.Padding(2);
             this.TB_NameOfFilter.Name = "TB_NameOfFilter";
-            this.TB_NameOfFilter.Size = new System.Drawing.Size(101, 18);
+            this.TB_NameOfFilter.Size = new System.Drawing.Size(100, 18);
             this.TB_NameOfFilter.TabIndex = 8;
             // 
             // ChB_Negate
             // 
-            this.ChB_Negate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ChB_Negate.AutoSize = true;
-            this.ChB_Negate.Location = new System.Drawing.Point(16, 8);
-            this.ChB_Negate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ChB_Negate.Location = new System.Drawing.Point(10, 8);
+            this.ChB_Negate.Margin = new System.Windows.Forms.Padding(2);
             this.ChB_Negate.Name = "ChB_Negate";
             this.ChB_Negate.Size = new System.Drawing.Size(60, 16);
             this.ChB_Negate.TabIndex = 6;
@@ -641,9 +642,8 @@ namespace BP_ZalohovaciNastroj
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(98, 9);
+            this.label3.Location = new System.Drawing.Point(80, 9);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 12);
@@ -656,7 +656,7 @@ namespace BP_ZalohovaciNastroj
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.B_Remove.Location = new System.Drawing.Point(12, 8);
-            this.B_Remove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.B_Remove.Margin = new System.Windows.Forms.Padding(2);
             this.B_Remove.Name = "B_Remove";
             this.B_Remove.Size = new System.Drawing.Size(68, 19);
             this.B_Remove.TabIndex = 4;
@@ -670,7 +670,7 @@ namespace BP_ZalohovaciNastroj
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.B_AddNext.Location = new System.Drawing.Point(12, 8);
-            this.B_AddNext.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.B_AddNext.Margin = new System.Windows.Forms.Padding(2);
             this.B_AddNext.Name = "B_AddNext";
             this.B_AddNext.Size = new System.Drawing.Size(68, 19);
             this.B_AddNext.TabIndex = 3;
@@ -684,7 +684,7 @@ namespace BP_ZalohovaciNastroj
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.B_AddChild.Location = new System.Drawing.Point(12, 6);
-            this.B_AddChild.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.B_AddChild.Margin = new System.Windows.Forms.Padding(2);
             this.B_AddChild.Name = "B_AddChild";
             this.B_AddChild.Size = new System.Drawing.Size(68, 19);
             this.B_AddChild.TabIndex = 2;
@@ -695,7 +695,7 @@ namespace BP_ZalohovaciNastroj
             // B_EditFilter
             // 
             this.B_EditFilter.Location = new System.Drawing.Point(12, 7);
-            this.B_EditFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.B_EditFilter.Margin = new System.Windows.Forms.Padding(2);
             this.B_EditFilter.Name = "B_EditFilter";
             this.B_EditFilter.Size = new System.Drawing.Size(68, 19);
             this.B_EditFilter.TabIndex = 1;
@@ -706,8 +706,8 @@ namespace BP_ZalohovaciNastroj
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 65);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 74);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -718,7 +718,7 @@ namespace BP_ZalohovaciNastroj
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.GB_FiltersOptions);
-            this.splitContainer1.Size = new System.Drawing.Size(703, 404);
+            this.splitContainer1.Size = new System.Drawing.Size(703, 395);
             this.splitContainer1.SplitterDistance = 276;
             this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 7;
@@ -728,10 +728,10 @@ namespace BP_ZalohovaciNastroj
             this.panel9.Controls.Add(this.TV_FiltersView);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(0, 0);
-            this.panel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
             this.panel9.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.panel9.Size = new System.Drawing.Size(184, 404);
+            this.panel9.Size = new System.Drawing.Size(184, 395);
             this.panel9.TabIndex = 3;
             // 
             // TV_FiltersView
@@ -739,9 +739,9 @@ namespace BP_ZalohovaciNastroj
             this.TV_FiltersView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TV_FiltersView.HideSelection = false;
             this.TV_FiltersView.Location = new System.Drawing.Point(8, 7);
-            this.TV_FiltersView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TV_FiltersView.Margin = new System.Windows.Forms.Padding(2);
             this.TV_FiltersView.Name = "TV_FiltersView";
-            this.TV_FiltersView.Size = new System.Drawing.Size(168, 390);
+            this.TV_FiltersView.Size = new System.Drawing.Size(168, 381);
             this.TV_FiltersView.TabIndex = 0;
             this.TV_FiltersView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TV_FiltersView_AfterSelect);
             // 
@@ -754,9 +754,9 @@ namespace BP_ZalohovaciNastroj
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(184, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(92, 404);
+            this.panel2.Size = new System.Drawing.Size(92, 395);
             this.panel2.TabIndex = 1;
             // 
             // panel7
@@ -764,8 +764,8 @@ namespace BP_ZalohovaciNastroj
             this.panel7.Controls.Add(this.btnSave);
             this.panel7.Controls.Add(this.B_SimulateBackup);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel7.Location = new System.Drawing.Point(0, 338);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel7.Location = new System.Drawing.Point(0, 329);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(92, 66);
             this.panel7.TabIndex = 8;
@@ -776,7 +776,7 @@ namespace BP_ZalohovaciNastroj
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.Location = new System.Drawing.Point(3, 5);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(85, 26);
             this.btnSave.TabIndex = 7;
@@ -789,7 +789,7 @@ namespace BP_ZalohovaciNastroj
             this.panel6.Controls.Add(this.B_Remove);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 96);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(92, 32);
             this.panel6.TabIndex = 8;
@@ -799,7 +799,7 @@ namespace BP_ZalohovaciNastroj
             this.panel5.Controls.Add(this.B_AddNext);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 64);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(92, 32);
             this.panel5.TabIndex = 8;
@@ -809,7 +809,7 @@ namespace BP_ZalohovaciNastroj
             this.panel4.Controls.Add(this.B_AddChild);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 32);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(92, 32);
             this.panel4.TabIndex = 8;
@@ -819,10 +819,28 @@ namespace BP_ZalohovaciNastroj
             this.panel3.Controls.Add(this.B_EditFilter);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(92, 32);
             this.panel3.TabIndex = 7;
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.WorkerSupportsCancellation = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Anonymous Pro", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label6.Location = new System.Drawing.Point(3, 63);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(209, 12);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Top filters are aggregated via AND";
             // 
             // Backup
             // 
@@ -832,7 +850,8 @@ namespace BP_ZalohovaciNastroj
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.GB_GlobalSettings);
             this.Font = new System.Drawing.Font("Anonymous Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(620, 389);
             this.Name = "Backup";
             this.Text = "Backup tool";
@@ -934,6 +953,8 @@ namespace BP_ZalohovaciNastroj
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCreateNewProject;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Label label6;
     }
 }
 

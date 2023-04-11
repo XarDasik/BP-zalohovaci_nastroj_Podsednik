@@ -29,6 +29,7 @@ namespace BP_ZalohovaciNastroj
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CopyFileDialog));
             this.btnYes = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnForAllFilesInAFolder = new System.Windows.Forms.Button();
@@ -48,7 +49,7 @@ namespace BP_ZalohovaciNastroj
             // btnYes
             // 
             this.btnYes.Location = new System.Drawing.Point(9, 107);
-            this.btnYes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnYes.Margin = new System.Windows.Forms.Padding(2);
             this.btnYes.Name = "btnYes";
             this.btnYes.Size = new System.Drawing.Size(68, 35);
             this.btnYes.TabIndex = 0;
@@ -70,7 +71,7 @@ namespace BP_ZalohovaciNastroj
             // btnForAllFilesInAFolder
             // 
             this.btnForAllFilesInAFolder.Location = new System.Drawing.Point(152, 107);
-            this.btnForAllFilesInAFolder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnForAllFilesInAFolder.Margin = new System.Windows.Forms.Padding(2);
             this.btnForAllFilesInAFolder.Name = "btnForAllFilesInAFolder";
             this.btnForAllFilesInAFolder.Size = new System.Drawing.Size(94, 35);
             this.btnForAllFilesInAFolder.TabIndex = 3;
@@ -82,7 +83,7 @@ namespace BP_ZalohovaciNastroj
             // 
             this.btnForEveryFile.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnForEveryFile.Location = new System.Drawing.Point(352, 107);
-            this.btnForEveryFile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnForEveryFile.Margin = new System.Windows.Forms.Padding(2);
             this.btnForEveryFile.Name = "btnForEveryFile";
             this.btnForEveryFile.Size = new System.Drawing.Size(81, 35);
             this.btnForEveryFile.TabIndex = 4;
@@ -106,7 +107,7 @@ namespace BP_ZalohovaciNastroj
             // btnNo
             // 
             this.btnNo.Location = new System.Drawing.Point(80, 107);
-            this.btnNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNo.Name = "btnNo";
             this.btnNo.Size = new System.Drawing.Size(68, 35);
             this.btnNo.TabIndex = 2;
@@ -117,7 +118,7 @@ namespace BP_ZalohovaciNastroj
             // btnForNoFilesInAFolder
             // 
             this.btnForNoFilesInAFolder.Location = new System.Drawing.Point(250, 107);
-            this.btnForNoFilesInAFolder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnForNoFilesInAFolder.Margin = new System.Windows.Forms.Padding(2);
             this.btnForNoFilesInAFolder.Name = "btnForNoFilesInAFolder";
             this.btnForNoFilesInAFolder.Size = new System.Drawing.Size(98, 35);
             this.btnForNoFilesInAFolder.TabIndex = 6;
@@ -128,7 +129,7 @@ namespace BP_ZalohovaciNastroj
             // btnLeft
             // 
             this.btnLeft.Location = new System.Drawing.Point(352, 74);
-            this.btnLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLeft.Margin = new System.Windows.Forms.Padding(2);
             this.btnLeft.Name = "btnLeft";
             this.btnLeft.Size = new System.Drawing.Size(38, 29);
             this.btnLeft.TabIndex = 7;
@@ -139,7 +140,7 @@ namespace BP_ZalohovaciNastroj
             // btnRight
             // 
             this.btnRight.Location = new System.Drawing.Point(395, 74);
-            this.btnRight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRight.Margin = new System.Windows.Forms.Padding(2);
             this.btnRight.Name = "btnRight";
             this.btnRight.Size = new System.Drawing.Size(38, 29);
             this.btnRight.TabIndex = 8;
@@ -171,7 +172,7 @@ namespace BP_ZalohovaciNastroj
             // 
             this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOk.Location = new System.Drawing.Point(389, 43);
-            this.btnOk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOk.Margin = new System.Windows.Forms.Padding(2);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(44, 29);
             this.btnOk.TabIndex = 11;
@@ -183,7 +184,7 @@ namespace BP_ZalohovaciNastroj
             this.flowLayoutPanel1.Controls.Add(this.lblFileName);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(444, 40);
             this.flowLayoutPanel1.TabIndex = 12;
@@ -207,8 +208,10 @@ namespace BP_ZalohovaciNastroj
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnYes);
             this.Font = new System.Drawing.Font("Anonymous Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CopyFileDialog";
+            this.ShowIcon = false;
             this.Text = "Dialog";
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();

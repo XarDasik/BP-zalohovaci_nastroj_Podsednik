@@ -27,7 +27,8 @@ namespace BP_ZalohovaciNastroj
     {
         public Project project { get; set; }
         public string PathFile { get; set; }
-
+        LoadingForm loadingForm = new LoadingForm();
+        FilterResult filterResult;
         public Backup(bool isForNewProject)
         {
             project = new Project();
@@ -263,7 +264,12 @@ namespace BP_ZalohovaciNastroj
 
         private void B_Remove_Click(object sender, EventArgs e)
         {
-            TreeNode selectedNode = this.TV_FiltersView.SelectedNode;
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete the filter?", "Delete action", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
+                TreeNode selectedNode = this.TV_FiltersView.SelectedNode;
             if (selectedNode == null)
             {
                 MessageBox.Show("Pick a filter you want to delete.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -511,22 +517,10 @@ namespace BP_ZalohovaciNastroj
                 MessageBox.Show("The Root path doesn't exist. Please select a valid path.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SimulateBackup();                        
+            backgroundWorker1.RunWorkerAsync();         
                
         }
 
-        private void SimulateBackup() 
-        {
-            var dir = new DirectoryInfo(TB_RootPath.Text);
-            FileInfo[] temp = dir.GetFiles("*.*", SearchOption.AllDirectories);
-            project.FilterManager.Files = project.FilterManager.ConvertToMyFile(temp);
-            project.FilterManager.AggregationFilter = project.MainFilter;
-            project.FilterManager.applyFilter(project);
-            TreeView FiltersClone = CopyTreeView(TV_FiltersView);
-
-            FilterResult filterResult = new FilterResult(project.FilterManager.Files.ToArray(), FiltersClone, TB_RootPath.Text, TB_DestinationPath.Text, Convert.ToInt32(NUD_NumberOfBackups.Value));
-            filterResult.Show();
-        }
         private TreeView CopyTreeView(TreeView Original)
         {
             TreeView ret = new TreeView();
@@ -639,6 +633,53 @@ namespace BP_ZalohovaciNastroj
                     MessageBox.Show("There was an unexpected error. Try to run the application as an administrator.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }                           
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            FilterResult filterResult;
+            var dir = new DirectoryInfo(TB_RootPath.Text);
+            FileInfo[] files = null;
+            try
+            {
+                files = dir.GetFiles("*.*", SearchOption.AllDirectories);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("You have no permission in the directory " + TB_RootPath.Text + "\nTry to avoid folders that you do not own or try to run the application as an administrator.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                filterResult = null;
+            }
+            project.FilterManager.Files = project.FilterManager.ConvertToMyFile(files);
+            project.FilterManager.AggregationFilter = project.MainFilter;
+            project.FilterManager.applyFilter(project);
+            TreeView FiltersClone = CopyTreeView(TV_FiltersView);
+            backgroundWorker1.ReportProgress(100);
+            if (!loadingForm.IsCanceled)
+                filterResult = new FilterResult(project.FilterManager.Files.ToArray(), FiltersClone, TB_RootPath.Text, TB_DestinationPath.Text, Convert.ToInt32(NUD_NumberOfBackups.Value));
+            else
+                filterResult = null;
+
+            e.Result = filterResult;
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (e.Result != null)
+            {
+                filterResult = e.Result as FilterResult;
+                loadingForm.Close();
+                if (filterResult != null && !loadingForm.IsCanceled)
+                {
+                    filterResult.Show();                    
+                }
+                    
+            }
+            
+        }
+
+        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+
         }
     }
 }

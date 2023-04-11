@@ -14,6 +14,7 @@ namespace BP_ZalohovaciNastroj.View.Backup.ProgressWindows
     public partial class BackupProgress : Form
     {
         private string _actualFile;
+        public bool IsCanceled { get; set; }
         public string ActualFile {
             get { return _actualFile; }
             set
@@ -26,7 +27,7 @@ namespace BP_ZalohovaciNastroj.View.Backup.ProgressWindows
         public int ActualIndex
         {
             get { return _actualIndex; }
-            set
+            private set
             {
                 _actualIndex = value;
                 UpdateUI();
@@ -45,6 +46,12 @@ namespace BP_ZalohovaciNastroj.View.Backup.ProgressWindows
             lblNumber.Text = String.Format("{0}/{1} files", ActualIndex.ToString(), FileCount.ToString());
             if(ActualIndex <= FileCount)
                 progressBar1.Value = ActualIndex;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            IsCanceled = true;
+            label1.Text = "cancelling...";
         }
     }
 }

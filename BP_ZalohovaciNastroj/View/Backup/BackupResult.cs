@@ -102,6 +102,34 @@ namespace BP_ZalohovaciNastroj
             }
         }
 
+        private int GetColorIndexOfFolder(DirectoryInfo di)
+        {
+            if (di.GetDirectories().Length == 0)
+                return GetColorIndexOfFolderByFiles(di);
+            if (GetColorIndexOfFolderByFiles(di) == YELLOW_FOLDER_INDEX)
+                return YELLOW_FOLDER_INDEX;
+
+            
+            int actualDirectory = GetColorIndexOfFolderByFiles(di);
+           
+            List<int> temp = new List<int>();
+            if(di.GetFiles().Length > 0)
+                temp.Add(actualDirectory);
+            foreach (DirectoryInfo item in di.GetDirectories())
+            {
+                int subDirectory = GetColorIndexOfFolderByFiles(item);
+                temp.Add(subDirectory);
+                if (item.GetDirectories().Length > 0)
+                    temp.Add(GetColorIndexOfFolder(item));
+            }
+            for (int i = 0; i < temp.Count - 1; i++)
+            {
+                if (temp[i] != temp[i + 1])
+                    return YELLOW_FOLDER_INDEX;
+            }
+            return GetColorIndexOfFolderByFiles(di);
+        }
+
         private int GetColorIndexOfFolderByFiles(DirectoryInfo di)
         {
             int backUped = 0;
@@ -126,30 +154,7 @@ namespace BP_ZalohovaciNastroj
             else
                 return GREEN_FOLDER_INDEX;
         }
-        private int GetColorIndexOfFolder(DirectoryInfo di)
-        {
-            if (di.GetDirectories().Length == 0)
-                return GetColorIndexOfFolderByFiles(di);
-            if (GetColorIndexOfFolderByFiles(di) == YELLOW_FOLDER_INDEX)
-                return YELLOW_FOLDER_INDEX;
-
-            int actualDirectory = GetColorIndexOfFolderByFiles(di);
-            List<int> temp = new List<int>();
-            temp.Add(actualDirectory);
-            foreach (DirectoryInfo item in di.GetDirectories())
-            {
-                int subDirectory = GetColorIndexOfFolderByFiles(item);
-                temp.Add(subDirectory);
-                if (item.GetDirectories().Length > 0)
-                    temp.Add(GetColorIndexOfFolder(item));
-            }
-            for (int i = 0; i < temp.Count - 1; i++)
-            {
-                if (temp[i] != temp[i + 1])
-                    return YELLOW_FOLDER_INDEX;
-            }
-            return GetColorIndexOfFolderByFiles(di);
-        }
+        
 
         private void tvw_AfterSelect(object sender, TreeViewEventArgs e)
         {

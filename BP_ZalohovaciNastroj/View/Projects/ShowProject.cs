@@ -17,9 +17,11 @@ namespace BP_ZalohovaciNastroj
     {
         Backup backupForm = new Backup(false);
         List<string> files;
-        public ShowProject()
+        private Main mainForm = null;
+        public ShowProject(Main mainForm)
         {
             InitializeComponent();
+            this.mainForm = mainForm;
             backupForm = new Backup(false);
             backupForm.TopLevel = false;
             backupForm.FormBorderStyle = FormBorderStyle.None;
@@ -88,7 +90,7 @@ namespace BP_ZalohovaciNastroj
                 return;
             }
                
-            DialogResult dialogResult = MessageBox.Show("Do you want to delete the project?", "Delete action", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Do you really want to delete the project?", "Delete action", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 try
@@ -113,6 +115,18 @@ namespace BP_ZalohovaciNastroj
         private void ShowProject_VisibleChanged(object sender, EventArgs e)
         {
             RefreshLbProjects();
+        }
+
+        private void btnNewProject_Click(object sender, EventArgs e)
+        {
+            Backup backupForm = new Backup(true);
+            backupForm.TopLevel = false;
+            backupForm.FormBorderStyle = FormBorderStyle.None;
+            backupForm.Dock = DockStyle.Fill;
+            this.Controls.Add(pnlNewProject);
+            pnlNewProject.Controls.Add(backupForm);
+            pnlNewProject.BringToFront();
+            backupForm.Show();
         }
     }
 }

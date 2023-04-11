@@ -47,6 +47,7 @@ namespace BP_ZalohovaciNastroj
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.label3 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -69,7 +70,7 @@ namespace BP_ZalohovaciNastroj
             this.tvwFilters.ImageIndex = 0;
             this.tvwFilters.ImageList = this.dotList;
             this.tvwFilters.Location = new System.Drawing.Point(8, 13);
-            this.tvwFilters.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tvwFilters.Margin = new System.Windows.Forms.Padding(2);
             this.tvwFilters.Name = "tvwFilters";
             this.tvwFilters.SelectedImageIndex = 0;
             this.tvwFilters.Size = new System.Drawing.Size(610, 120);
@@ -87,7 +88,7 @@ namespace BP_ZalohovaciNastroj
             this.lvw.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvw.HideSelection = false;
             this.lvw.Location = new System.Drawing.Point(8, 16);
-            this.lvw.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lvw.Margin = new System.Windows.Forms.Padding(2);
             this.lvw.Name = "lvw";
             this.lvw.Size = new System.Drawing.Size(610, 224);
             this.lvw.SmallImageList = this.dotList;
@@ -102,10 +103,10 @@ namespace BP_ZalohovaciNastroj
             this.tvw.ImageIndex = 0;
             this.tvw.ImageList = this.tvwIml;
             this.tvw.Location = new System.Drawing.Point(8, 16);
-            this.tvw.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tvw.Margin = new System.Windows.Forms.Padding(2);
             this.tvw.Name = "tvw";
             this.tvw.SelectedImageIndex = 0;
-            this.tvw.Size = new System.Drawing.Size(296, 437);
+            this.tvw.Size = new System.Drawing.Size(296, 427);
             this.tvw.TabIndex = 3;
             this.tvw.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.tvw_BeforeExpand);
             this.tvw.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvw_AfterSelect);
@@ -123,10 +124,10 @@ namespace BP_ZalohovaciNastroj
             // B_BackUp
             // 
             this.B_BackUp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.B_BackUp.Location = new System.Drawing.Point(4, 4);
-            this.B_BackUp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.B_BackUp.Location = new System.Drawing.Point(7, 1);
+            this.B_BackUp.Margin = new System.Windows.Forms.Padding(2);
             this.B_BackUp.Name = "B_BackUp";
-            this.B_BackUp.Size = new System.Drawing.Size(304, 17);
+            this.B_BackUp.Size = new System.Drawing.Size(298, 32);
             this.B_BackUp.TabIndex = 6;
             this.B_BackUp.Text = "Backup";
             this.B_BackUp.UseVisualStyleBackColor = true;
@@ -139,15 +140,15 @@ namespace BP_ZalohovaciNastroj
             this.label1.Location = new System.Drawing.Point(5, 1);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 13);
+            this.label1.Size = new System.Drawing.Size(71, 13);
             this.label1.TabIndex = 7;
-            this.label1.Text = "File System:";
+            this.label1.Text = "Folders:";
             // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -169,21 +170,21 @@ namespace BP_ZalohovaciNastroj
             this.panel1.Controls.Add(this.tvw);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(8, 16, 8, 6);
-            this.panel1.Size = new System.Drawing.Size(312, 459);
+            this.panel1.Padding = new System.Windows.Forms.Padding(8, 16, 8, 4);
+            this.panel1.Size = new System.Drawing.Size(312, 447);
             this.panel1.TabIndex = 7;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.B_BackUp);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 459);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(0, 447);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel2.Size = new System.Drawing.Size(312, 25);
+            this.panel2.Padding = new System.Windows.Forms.Padding(7, 1, 7, 4);
+            this.panel2.Size = new System.Drawing.Size(312, 37);
             this.panel2.TabIndex = 8;
             // 
             // splitContainer2
@@ -191,7 +192,7 @@ namespace BP_ZalohovaciNastroj
             this.splitContainer2.BackColor = System.Drawing.SystemColors.Control;
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -213,7 +214,7 @@ namespace BP_ZalohovaciNastroj
             this.panel3.Controls.Add(this.lvw);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(8, 16, 8, 6);
             this.panel3.Size = new System.Drawing.Size(626, 246);
@@ -234,7 +235,7 @@ namespace BP_ZalohovaciNastroj
             // 
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer3.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainer3.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer3.Name = "splitContainer3";
             this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -270,6 +271,12 @@ namespace BP_ZalohovaciNastroj
             this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
             this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
+            // backgroundWorker2
+            // 
+            this.backgroundWorker2.WorkerReportsProgress = true;
+            this.backgroundWorker2.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker2_DoWork);
+            this.backgroundWorker2.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker2_RunWorkerCompleted);
+            // 
             // FilterResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -277,7 +284,8 @@ namespace BP_ZalohovaciNastroj
             this.ClientSize = new System.Drawing.Size(941, 484);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Anonymous Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(604, 340);
             this.Name = "FilterResult";
             this.Text = "Filter result";
@@ -321,5 +329,6 @@ namespace BP_ZalohovaciNastroj
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
     }
 }

@@ -3,15 +3,9 @@ using BP_ZalohovaciNastroj.View.Backup.ProgressWindows;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BP_ZalohovaciNastroj
@@ -33,6 +27,7 @@ namespace BP_ZalohovaciNastroj
         private string destination_folder;
         private int maxCountOfBackups;
         BackupProgress backupProgress = new BackupProgress();
+        LoadingForm loadingForm = new LoadingForm();
         Dictionary<MyFile, Result> backupInfo = new Dictionary<MyFile, Result>();
         private string actualFile;
         
@@ -45,10 +40,17 @@ namespace BP_ZalohovaciNastroj
             this.Filters = filters;
             this.destination_folder = @destination_folder;
             this.maxCountOfBackups = maxCountOfBackups;
+
+            this.Text += " - " + (string)new DirectoryInfo(init_folder).FullName;
+            BackupLegendFilterResult BackupLegend = new BackupLegendFilterResult();
+            BackupLegend.TopLevel = false;
+            BackupLegend.FormBorderStyle = FormBorderStyle.None;
+            BackupLegend.Dock = DockStyle.Fill;
+            BackupLegend.Show();           
+           
         }
         private void TempForm_Load(object sender, EventArgs e)
         {
-            InitTvw();
             this.Text += " - " + (string)new DirectoryInfo(init_folder).FullName;
             BackupLegendFilterResult BackupLegend = new BackupLegendFilterResult();
             BackupLegend.TopLevel = false;
@@ -56,6 +58,8 @@ namespace BP_ZalohovaciNastroj
             BackupLegend.Dock = DockStyle.Fill;
             BackupLegend.Show();
             splitContainer3.Panel2.Controls.Add(BackupLegend);
+            backgroundWorker2.RunWorkerAsync();
+            loadingForm.ShowDialog();
         }
         private void InitTvw()
         {            
@@ -64,9 +68,15 @@ namespace BP_ZalohovaciNastroj
             mainNode.ImageIndex = GetColorIndexOfFolder(rootDirectoryInfo);
             mainNode.Tag = rootDirectoryInfo;
             mainNode.SelectedImageIndex = mainNode.ImageIndex;
-            tvw.Nodes.Add(mainNode);
-
-            var folders = System.IO.Directory.GetDirectories(init_folder);
+            if (loadingForm.IsCanceled) return;
+            if (tvw.InvokeRequired)
+            {
+                tvw.BeginInvoke((MethodInvoker)delegate
+                {
+                    tvw.Nodes.Add(mainNode);
+                });
+            }
+            var folders = Directory.GetDirectories(init_folder);
             
             foreach (DirectoryInfo di in rootDirectoryInfo.GetDirectories())
             {
@@ -86,8 +96,17 @@ namespace BP_ZalohovaciNastroj
                 node.SelectedImageIndex = node.ImageIndex;
                 if (node.ImageIndex != ERROR_FOLDER_INDEX && node.ImageIndex != EMPTY_FOLDER_INDEX)
                     node.Nodes.Add(new TreeNode());
-                tvw.Nodes[0].Nodes.Add(node);
+                if (tvw.InvokeRequired)
+                {
+                    if (loadingForm.IsCanceled) return;
+                    tvw.BeginInvoke((MethodInvoker)delegate
+                    {
+                        tvw.Nodes[0].Nodes.Add(node);
+                    });
+                }
+                
             }
+            backgroundWorker2.ReportProgress(100);
         }
 
         private void tvw_BeforeExpand(object sender, TreeViewCancelEventArgs e)
@@ -118,6 +137,9 @@ namespace BP_ZalohovaciNastroj
         }
         private int GetColorIndexOfFolderByFiles(DirectoryInfo di)
         {
+            if (di.GetFiles().Count() == 0)
+                return EMPTY_FOLDER_INDEX;
+
             int countToBackUp = 0;
             foreach (FileInfo f in di.GetFiles())
             {
@@ -126,7 +148,6 @@ namespace BP_ZalohovaciNastroj
                     countToBackUp++;
                 }
             }
-
             
             if (countToBackUp == 0 && di.GetFiles().Count() > 0)
                 return RED_FOLDER_INDEX;
@@ -161,9 +182,12 @@ namespace BP_ZalohovaciNastroj
             if (GetColorIndexOfFolderByFiles(di) == YELLOW_FOLDER_INDEX)
                 return YELLOW_FOLDER_INDEX;
 
-            int actualDirectory = GetColorIndexOfFolderByFiles(di);
             List<int> temp = new List<int>();
+
+            int actualDirectory = GetColorIndexOfFolderByFiles(di);
             temp.Add(actualDirectory);
+          
+            
             foreach (DirectoryInfo item in di.GetDirectories())
             {                
                 int subDirectory = GetColorIndexOfFolderByFiles(item);
@@ -272,16 +296,15 @@ namespace BP_ZalohovaciNastroj
 
         private void B_BackUp_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to backup?\nThe process can't be stopped and can take some time.", "Backup", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.No)
-                return;
-
             if (GetFileCount() > 0)
             {                
                 backgroundWorker1.RunWorkerAsync();
                 backupProgress.FileCount = GetFileCount();
                 backupProgress.ShowDialog();
-            }         
+            }
+            else
+                MessageBox.Show("No files to backup.\nEmpty Folder or all files are rejected by filters.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
         }
 
         private void DeleteTheOldestBackup(List<FileInfo> files)
@@ -335,8 +358,7 @@ namespace BP_ZalohovaciNastroj
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-            
+        {               
             try
             {
                 foreach (string dirPath in Directory.GetDirectories(init_folder, "*", SearchOption.AllDirectories))
@@ -357,6 +379,11 @@ namespace BP_ZalohovaciNastroj
                     {
                         if (item.File.FullName.Equals(newPath) && item.ToBackUp)
                         {
+                            if (IsBackupCancelled()) 
+                            {
+                                backgroundWorker1.ReportProgress(100);
+                                return;
+                            }
                             actualFile = newPath;
                             backgroundWorker1.ReportProgress(1);
                             try
@@ -419,6 +446,11 @@ namespace BP_ZalohovaciNastroj
                 MessageBox.Show("Unknown error. Make sure, you are not moving files during backup.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private bool IsBackupCancelled()
+        {
+            return backupProgress.IsCanceled;
+
+        }
 
         private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
@@ -436,6 +468,16 @@ namespace BP_ZalohovaciNastroj
             BackupResult backupResult = new BackupResult(backupInfo, init_folder);            
             backupResult.Show();
             this.Close();
+        }
+
+        private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
+        {
+            InitTvw();
+        }
+
+        private void backgroundWorker2_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            loadingForm.Close();
         }
     }
 }

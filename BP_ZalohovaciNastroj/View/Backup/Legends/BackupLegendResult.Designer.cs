@@ -62,7 +62,7 @@ namespace BP_ZalohovaciNastroj.View.Backup.Legends
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(299, 8);
+            this.label7.Location = new System.Drawing.Point(332, 8);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 12);
             this.label7.TabIndex = 35;
@@ -70,7 +70,7 @@ namespace BP_ZalohovaciNastroj.View.Backup.Legends
             // 
             // pb_gray
             // 
-            this.pb_gray.Location = new System.Drawing.Point(276, 8);
+            this.pb_gray.Location = new System.Drawing.Point(309, 8);
             this.pb_gray.Name = "pb_gray";
             this.pb_gray.Size = new System.Drawing.Size(17, 12);
             this.pb_gray.TabIndex = 34;
@@ -140,7 +140,7 @@ namespace BP_ZalohovaciNastroj.View.Backup.Legends
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(299, 30);
+            this.label1.Location = new System.Drawing.Point(332, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 12);
             this.label1.TabIndex = 37;
@@ -148,7 +148,7 @@ namespace BP_ZalohovaciNastroj.View.Backup.Legends
             // 
             // pb_error
             // 
-            this.pb_error.Location = new System.Drawing.Point(276, 30);
+            this.pb_error.Location = new System.Drawing.Point(309, 30);
             this.pb_error.Name = "pb_error";
             this.pb_error.Size = new System.Drawing.Size(17, 12);
             this.pb_error.TabIndex = 36;
@@ -199,7 +199,7 @@ namespace BP_ZalohovaciNastroj.View.Backup.Legends
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(299, 70);
+            this.label8.Location = new System.Drawing.Point(332, 70);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(125, 12);
             this.label8.TabIndex = 43;
@@ -207,7 +207,7 @@ namespace BP_ZalohovaciNastroj.View.Backup.Legends
             // 
             // pb_GrayFile
             // 
-            this.pb_GrayFile.Location = new System.Drawing.Point(277, 69);
+            this.pb_GrayFile.Location = new System.Drawing.Point(310, 69);
             this.pb_GrayFile.Name = "pb_GrayFile";
             this.pb_GrayFile.Size = new System.Drawing.Size(17, 15);
             this.pb_GrayFile.TabIndex = 42;
@@ -217,7 +217,7 @@ namespace BP_ZalohovaciNastroj.View.Backup.Legends
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(438, 126);
+            this.ClientSize = new System.Drawing.Size(466, 126);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.pb_GrayFile);
             this.Controls.Add(this.label3);
@@ -235,7 +235,9 @@ namespace BP_ZalohovaciNastroj.View.Backup.Legends
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pb_error);
             this.Font = new System.Drawing.Font("Anonymous Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BackupLegendResult";
+            this.ShowIcon = false;
             this.Text = "BackupLegendResult";
             ((System.ComponentModel.ISupportInitialize)(this.pb_gray)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_green)).EndInit();

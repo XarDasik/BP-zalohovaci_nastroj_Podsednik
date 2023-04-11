@@ -235,6 +235,7 @@ namespace BP_ZalohovaciNastroj.View.Recovery
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pb_error);
             this.Font = new System.Drawing.Font("Anonymous Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RecoveryLegend";
             this.Text = "RecoveryLegend";
             ((System.ComponentModel.ISupportInitialize)(this.pb_gray)).EndInit();

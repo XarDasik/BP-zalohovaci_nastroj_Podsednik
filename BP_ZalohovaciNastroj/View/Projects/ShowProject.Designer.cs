@@ -29,16 +29,19 @@ namespace BP_ZalohovaciNastroj
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShowProject));
             this.lbProjects = new System.Windows.Forms.ListBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnDeleteProject = new System.Windows.Forms.Button();
             this.btnLoadProject = new System.Windows.Forms.Button();
+            this.btnNewProject = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlBackup = new System.Windows.Forms.Panel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.pnlNewProject = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -54,9 +57,9 @@ namespace BP_ZalohovaciNastroj
             this.lbProjects.FormattingEnabled = true;
             this.lbProjects.ItemHeight = 12;
             this.lbProjects.Location = new System.Drawing.Point(2, 2);
-            this.lbProjects.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbProjects.Margin = new System.Windows.Forms.Padding(2);
             this.lbProjects.Name = "lbProjects";
-            this.lbProjects.Size = new System.Drawing.Size(97, 372);
+            this.lbProjects.Size = new System.Drawing.Size(110, 367);
             this.lbProjects.TabIndex = 0;
             this.lbProjects.SelectedIndexChanged += new System.EventHandler(this.lbProjects_SelectedIndexChanged);
             // 
@@ -64,7 +67,7 @@ namespace BP_ZalohovaciNastroj
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -78,7 +81,7 @@ namespace BP_ZalohovaciNastroj
             this.splitContainer1.Panel2.Controls.Add(this.pnlBackup);
             this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
             this.splitContainer1.Size = new System.Drawing.Size(787, 469);
-            this.splitContainer1.SplitterDistance = 101;
+            this.splitContainer1.SplitterDistance = 114;
             this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -86,22 +89,23 @@ namespace BP_ZalohovaciNastroj
             // 
             this.panel3.Controls.Add(this.btnDeleteProject);
             this.panel3.Controls.Add(this.btnLoadProject);
+            this.panel3.Controls.Add(this.btnNewProject);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 395);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Location = new System.Drawing.Point(0, 377);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel3.Size = new System.Drawing.Size(101, 74);
+            this.panel3.Padding = new System.Windows.Forms.Padding(4);
+            this.panel3.Size = new System.Drawing.Size(114, 92);
             this.panel3.TabIndex = 3;
             // 
             // btnDeleteProject
             // 
-            this.btnDeleteProject.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnDeleteProject.Location = new System.Drawing.Point(4, 32);
-            this.btnDeleteProject.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDeleteProject.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDeleteProject.Location = new System.Drawing.Point(4, 56);
+            this.btnDeleteProject.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteProject.Name = "btnDeleteProject";
-            this.btnDeleteProject.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnDeleteProject.Size = new System.Drawing.Size(93, 38);
+            this.btnDeleteProject.Padding = new System.Windows.Forms.Padding(2);
+            this.btnDeleteProject.Size = new System.Drawing.Size(106, 26);
             this.btnDeleteProject.TabIndex = 2;
             this.btnDeleteProject.Text = "Delete project";
             this.btnDeleteProject.UseVisualStyleBackColor = true;
@@ -110,35 +114,47 @@ namespace BP_ZalohovaciNastroj
             // btnLoadProject
             // 
             this.btnLoadProject.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLoadProject.Location = new System.Drawing.Point(4, 4);
-            this.btnLoadProject.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLoadProject.Location = new System.Drawing.Point(4, 30);
+            this.btnLoadProject.Margin = new System.Windows.Forms.Padding(2);
             this.btnLoadProject.Name = "btnLoadProject";
-            this.btnLoadProject.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnLoadProject.Size = new System.Drawing.Size(93, 26);
+            this.btnLoadProject.Padding = new System.Windows.Forms.Padding(2);
+            this.btnLoadProject.Size = new System.Drawing.Size(106, 26);
             this.btnLoadProject.TabIndex = 1;
             this.btnLoadProject.Text = "Load Project";
             this.btnLoadProject.UseVisualStyleBackColor = true;
             this.btnLoadProject.Click += new System.EventHandler(this.btnLoadProject_Click);
+            // 
+            // btnNewProject
+            // 
+            this.btnNewProject.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNewProject.Location = new System.Drawing.Point(4, 4);
+            this.btnNewProject.Name = "btnNewProject";
+            this.btnNewProject.Size = new System.Drawing.Size(106, 26);
+            this.btnNewProject.TabIndex = 3;
+            this.btnNewProject.Text = "New project";
+            this.btnNewProject.UseVisualStyleBackColor = true;
+            this.btnNewProject.Click += new System.EventHandler(this.btnNewProject_Click);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.lbProjects);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 15);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 80);
-            this.panel2.Size = new System.Drawing.Size(101, 454);
+            this.panel2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 85);
+            this.panel2.Size = new System.Drawing.Size(114, 454);
             this.panel2.TabIndex = 2;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pnlNewProject);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(101, 15);
+            this.panel1.Size = new System.Drawing.Size(114, 15);
             this.panel1.TabIndex = 1;
             // 
             // label1
@@ -155,14 +171,22 @@ namespace BP_ZalohovaciNastroj
             // 
             this.pnlBackup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBackup.Location = new System.Drawing.Point(0, 4);
-            this.pnlBackup.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlBackup.Margin = new System.Windows.Forms.Padding(2);
             this.pnlBackup.Name = "pnlBackup";
-            this.pnlBackup.Size = new System.Drawing.Size(683, 465);
+            this.pnlBackup.Size = new System.Drawing.Size(670, 465);
             this.pnlBackup.TabIndex = 0;
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "Backup Project files|*.data";
+            // 
+            // pnlNewProject
+            // 
+            this.pnlNewProject.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlNewProject.Location = new System.Drawing.Point(0, 0);
+            this.pnlNewProject.Name = "pnlNewProject";
+            this.pnlNewProject.Size = new System.Drawing.Size(114, 15);
+            this.pnlNewProject.TabIndex = 0;
             // 
             // ShowProject
             // 
@@ -171,7 +195,8 @@ namespace BP_ZalohovaciNastroj
             this.ClientSize = new System.Drawing.Size(787, 469);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Anonymous Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ShowProject";
             this.Text = "Show project";
             this.VisibleChanged += new System.EventHandler(this.ShowProject_VisibleChanged);
@@ -199,5 +224,7 @@ namespace BP_ZalohovaciNastroj
         private System.Windows.Forms.Button btnLoadProject;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btnDeleteProject;
+        private System.Windows.Forms.Button btnNewProject;
+        private System.Windows.Forms.Panel pnlNewProject;
     }
 }

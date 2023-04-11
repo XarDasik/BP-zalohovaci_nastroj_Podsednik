@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BP_ZalohovaciNastroj.View.Backup.ProgressWindows;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,18 +13,11 @@ namespace BP_ZalohovaciNastroj
 {
     public partial class Main : Form
     {
-        Backup backupForm = new Backup(false);
         Recovery recoveryForm;
         ShowProject showProject;
         public Main()
         {
             InitializeComponent();
-
-            backupForm = new Backup(true);
-            backupForm.TopLevel = false;
-            backupForm.FormBorderStyle = FormBorderStyle.None;
-            backupForm.Dock = DockStyle.Fill;
-            P_Main.Controls.Add(backupForm);
 
             recoveryForm = new Recovery();
             recoveryForm.TopLevel = false;
@@ -31,7 +25,7 @@ namespace BP_ZalohovaciNastroj
             recoveryForm.Dock = DockStyle.Fill;
             P_Main.Controls.Add(recoveryForm);
 
-            showProject = new ShowProject();
+            showProject = new ShowProject(this);
             showProject.TopLevel = false;
             showProject.FormBorderStyle = FormBorderStyle.None;
             showProject.Dock = DockStyle.Fill;
@@ -39,25 +33,23 @@ namespace BP_ZalohovaciNastroj
         }
         private void B_Recovery_Click(object sender, EventArgs e)
         {
-            HideAllForms();
+            HideAllForms();           
             recoveryForm.Show();
-        }
-
-        private void B_NewProject_Click(object sender, EventArgs e)
-        {
-            HideAllForms();
-            backupForm.Show();
         }
         private void HideAllForms()
         {
             recoveryForm.Hide();
-            backupForm.Hide();
-            showProject.Hide();
+            showProject.Close();
         }
 
         private void B_ShowProjects_Click(object sender, EventArgs e)
         {
             HideAllForms();
+            showProject = new ShowProject(this);
+            showProject.TopLevel = false;
+            showProject.FormBorderStyle = FormBorderStyle.None;
+            showProject.Dock = DockStyle.Fill;
+            P_Main.Controls.Add(showProject);
             showProject.Show();
         }
     }

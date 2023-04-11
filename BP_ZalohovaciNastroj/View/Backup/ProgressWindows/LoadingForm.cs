@@ -13,10 +13,17 @@ namespace BP_ZalohovaciNastroj.View.Backup.ProgressWindows
 {
     public partial class LoadingForm : Form
     {
+        public bool IsCanceled { get; set; }        
         public LoadingForm()
         {
-            InitializeComponent();
-            
+            InitializeComponent();            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            label1.Text = "Cancelling...";
+            IsCanceled = true;
+            button1.Enabled = false;
         }
     }
 }
