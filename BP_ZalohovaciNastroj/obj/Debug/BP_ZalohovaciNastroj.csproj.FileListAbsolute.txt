@@ -66,3 +66,6 @@ C:\Users\phili\Source\Repos\BP-zalohovaci_nastroj_Podsednik-gh1\BP_ZalohovaciNas
 C:\Users\phili\Source\Repos\BP-zalohovaci_nastroj_Podsednik-gh1\BP_ZalohovaciNastroj\obj\Debug\BP_ZalohovaciNastroj.exe
 C:\Users\phili\Source\Repos\BP-zalohovaci_nastroj_Podsednik-gh1\BP_ZalohovaciNastroj\obj\Debug\BP_ZalohovaciNastroj.pdb
 C:\Users\phili\Source\Repos\BP-zalohovaci_nastroj_Podsednik-gh1\BP_ZalohovaciNastroj\obj\Debug\BP_ZalohovaciNastroj.View.Backup.ProgressWindows.LoadingForm.resources
+C:\Users\phili\source\repos\BP_ZalohovaciNastroj\obj\Debug\BP_ZalohovaciNastroj.View.Backup.ProgressWindows.BackupProgress.resources
+C:\Users\phili\source\repos\BP_ZalohovaciNastroj\obj\Debug\BP_ZalohovaciNastroj.View.Backup.ProgressWindows.LoadingForm.resources
+C:\Users\phili\source\repos\BP_ZalohovaciNastroj\obj\Debug\BP_ZalohovaciNastroj.csproj.SuggestedBindingRedirects.cache
