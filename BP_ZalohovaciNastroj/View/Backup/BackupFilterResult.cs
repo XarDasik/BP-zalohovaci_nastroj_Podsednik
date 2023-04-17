@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Runtime.Hosting;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -135,6 +136,49 @@ namespace BP_ZalohovaciNastroj
                 e.Node.Nodes.Add(node);
             }
         }
+        private int GetColorIndexOfFolder(DirectoryInfo di)
+        {
+            if (di.GetDirectories().Length == 0)
+                return GetColorIndexOfFolderByFiles(di);
+            if (GetColorIndexOfFolderByFiles(di) == YELLOW_FOLDER_INDEX)
+                return YELLOW_FOLDER_INDEX;
+            
+
+            List<int> temp = new List<int>();
+
+            int actualDirectory = GetColorIndexOfFolderByFiles(di);
+            if (actualDirectory == EMPTY_FOLDER_INDEX && di.GetDirectories().Length > 0)
+            {
+                foreach (DirectoryInfo item in di.GetDirectories())
+                {
+                    int subDirectory = GetColorIndexOfFolder(item);
+                    temp.Add(subDirectory);
+                }
+                for (int i = 0; i < temp.Count - 1; i++)
+                {
+                    if (temp[i] != temp[i + 1])
+                        return YELLOW_FOLDER_INDEX;
+                }
+                return temp[temp.Count - 1];
+            }
+            else 
+            {
+                temp.Add(actualDirectory);
+
+                foreach (DirectoryInfo item in di.GetDirectories())
+                {
+                    int subDirectory = GetColorIndexOfFolder(item);
+                    temp.Add(subDirectory);
+                }
+                for (int i = 0; i < temp.Count - 1; i++)
+                {
+                    if (temp[i] != temp[i + 1])
+                        return YELLOW_FOLDER_INDEX;
+                }
+            }
+            
+            return GetColorIndexOfFolderByFiles(di);
+        }
         private int GetColorIndexOfFolderByFiles(DirectoryInfo di)
         {
             if (di.GetFiles().Count() == 0)
@@ -175,33 +219,7 @@ namespace BP_ZalohovaciNastroj
             }
             return temp[0];
         }
-        private int GetColorIndexOfFolder(DirectoryInfo di)
-        {
-            if (di.GetDirectories().Length == 0)
-                return GetColorIndexOfFolderByFiles(di);
-            if (GetColorIndexOfFolderByFiles(di) == YELLOW_FOLDER_INDEX)
-                return YELLOW_FOLDER_INDEX;
-
-            List<int> temp = new List<int>();
-
-            int actualDirectory = GetColorIndexOfFolderByFiles(di);
-            temp.Add(actualDirectory);
-          
-            
-            foreach (DirectoryInfo item in di.GetDirectories())
-            {                
-                int subDirectory = GetColorIndexOfFolderByFiles(item);
-                temp.Add(subDirectory);
-                if (item.GetDirectories().Length > 0)
-                    temp.Add(GetColorIndexOfFolder(item));
-            }
-            for (int i = 0; i < temp.Count-1; i++)
-            {
-                if (temp[i] != temp[i + 1])
-                        return YELLOW_FOLDER_INDEX;
-            }
-            return GetColorIndexOfFolderByFiles(di);
-        }
+        
 
         private void tvw_AfterSelect(object sender, TreeViewEventArgs e)
         {

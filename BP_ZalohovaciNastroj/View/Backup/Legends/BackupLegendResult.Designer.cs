@@ -64,9 +64,9 @@ namespace BP_ZalohovaciNastroj.View.Backup.Legends
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(332, 8);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 12);
+            this.label7.Size = new System.Drawing.Size(173, 12);
             this.label7.TabIndex = 35;
-            this.label7.Text = "Empty Folder";
+            this.label7.Text = "Empty Folder or not necesary";
             // 
             // pb_gray
             // 

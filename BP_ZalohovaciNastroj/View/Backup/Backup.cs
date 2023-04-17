@@ -56,13 +56,13 @@ namespace BP_ZalohovaciNastroj
             Filter newFilter;
             if(TV_FiltersView.SelectedNode == null)
             {
-                MessageBox.Show("Choose an aggregation filter.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Select a aggregation filter where you want to add subfilter.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (!(TV_FiltersView.SelectedNode.Tag is AggregationFilter))
             {
-                MessageBox.Show("You can add a filter only for Aggregation filter.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("You can add a subfilter only for the Aggregation filter.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
                         
@@ -671,10 +671,8 @@ namespace BP_ZalohovaciNastroj
                 if (filterResult != null && !loadingForm.IsCanceled)
                 {
                     filterResult.Show();                    
-                }
-                    
-            }
-            
+                }                    
+            }            
         }
 
         private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
