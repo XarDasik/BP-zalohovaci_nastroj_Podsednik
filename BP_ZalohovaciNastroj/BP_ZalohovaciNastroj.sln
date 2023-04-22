@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BP_ZalohovaciNastroj", "BP_ZalohovaciNastroj.csproj", "{BEEE88C7-26FB-405C-B728-37A71671F69C}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "BackupToolInstaller", "..\BackupToolInstaller\BackupToolInstaller.vdproj", "{7BEC5EFE-7207-4836-B530-10E387E51053}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BEEE88C7-26FB-405C-B728-37A71671F69C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEEE88C7-26FB-405C-B728-37A71671F69C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEEE88C7-26FB-405C-B728-37A71671F69C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEEE88C7-26FB-405C-B728-37A71671F69C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BEC5EFE-7207-4836-B530-10E387E51053}.Debug|Any CPU.ActiveCfg = Debug
+		{7BEC5EFE-7207-4836-B530-10E387E51053}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EEEDBD0B-0420-4695-8186-A7F94550810A}
+	EndGlobalSection
+EndGlobal
