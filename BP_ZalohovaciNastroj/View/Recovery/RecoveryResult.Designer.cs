@@ -61,7 +61,7 @@ namespace BP_ZalohovaciNastroj
             this.tvw.Margin = new System.Windows.Forms.Padding(2);
             this.tvw.Name = "tvw";
             this.tvw.SelectedImageIndex = 0;
-            this.tvw.Size = new System.Drawing.Size(154, 269);
+            this.tvw.Size = new System.Drawing.Size(250, 460);
             this.tvw.TabIndex = 5;
             this.tvw.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.tvw_BeforeExpand);
             this.tvw.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvw_AfterSelect);
@@ -84,7 +84,7 @@ namespace BP_ZalohovaciNastroj
             this.lvw.Location = new System.Drawing.Point(0, 0);
             this.lvw.Margin = new System.Windows.Forms.Padding(2);
             this.lvw.Name = "lvw";
-            this.lvw.Size = new System.Drawing.Size(411, 177);
+            this.lvw.Size = new System.Drawing.Size(656, 302);
             this.lvw.SmallImageList = this.dotList;
             this.lvw.TabIndex = 6;
             this.lvw.UseCompatibleStateImageBehavior = false;
@@ -112,8 +112,8 @@ namespace BP_ZalohovaciNastroj
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.panel2);
-            this.splitContainer1.Size = new System.Drawing.Size(600, 293);
-            this.splitContainer1.SplitterDistance = 170;
+            this.splitContainer1.Size = new System.Drawing.Size(941, 484);
+            this.splitContainer1.SplitterDistance = 266;
             this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 8;
             // 
@@ -126,7 +126,7 @@ namespace BP_ZalohovaciNastroj
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(8, 18, 8, 6);
-            this.panel1.Size = new System.Drawing.Size(170, 293);
+            this.panel1.Size = new System.Drawing.Size(266, 484);
             this.panel1.TabIndex = 6;
             // 
             // label2
@@ -149,7 +149,7 @@ namespace BP_ZalohovaciNastroj
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(8, 18, 8, 6);
-            this.panel2.Size = new System.Drawing.Size(427, 293);
+            this.panel2.Size = new System.Drawing.Size(672, 484);
             this.panel2.TabIndex = 7;
             // 
             // splitContainer2
@@ -169,8 +169,8 @@ namespace BP_ZalohovaciNastroj
             // 
             this.splitContainer2.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.splitContainer2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.splitContainer2.Size = new System.Drawing.Size(411, 269);
-            this.splitContainer2.SplitterDistance = 177;
+            this.splitContainer2.Size = new System.Drawing.Size(656, 460);
+            this.splitContainer2.SplitterDistance = 302;
             this.splitContainer2.SplitterWidth = 3;
             this.splitContainer2.TabIndex = 11;
             // 
@@ -189,7 +189,7 @@ namespace BP_ZalohovaciNastroj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 293);
+            this.ClientSize = new System.Drawing.Size(941, 484);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Anonymous Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

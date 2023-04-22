@@ -261,10 +261,12 @@ namespace BP_ZalohovaciNastroj
             this.GB_FiltersOptions.Size = new System.Drawing.Size(357, 395);
             this.GB_FiltersOptions.TabIndex = 5;
             this.GB_FiltersOptions.TabStop = false;
+            this.GB_FiltersOptions.Text = "Filter settings";
             // 
             // panel13
             // 
             this.panel13.Controls.Add(this.TC_Filters);
+            this.panel13.Controls.Add(this.panel3);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel13.Location = new System.Drawing.Point(2, 13);
             this.panel13.Margin = new System.Windows.Forms.Padding(2);
@@ -285,7 +287,7 @@ namespace BP_ZalohovaciNastroj
             this.TC_Filters.Margin = new System.Windows.Forms.Padding(2);
             this.TC_Filters.Name = "TC_Filters";
             this.TC_Filters.SelectedIndex = 0;
-            this.TC_Filters.Size = new System.Drawing.Size(337, 336);
+            this.TC_Filters.Size = new System.Drawing.Size(337, 295);
             this.TC_Filters.TabIndex = 5;
             // 
             // TC_Aggregation
@@ -296,7 +298,7 @@ namespace BP_ZalohovaciNastroj
             this.TC_Aggregation.Margin = new System.Windows.Forms.Padding(2);
             this.TC_Aggregation.Name = "TC_Aggregation";
             this.TC_Aggregation.Padding = new System.Windows.Forms.Padding(2);
-            this.TC_Aggregation.Size = new System.Drawing.Size(329, 311);
+            this.TC_Aggregation.Size = new System.Drawing.Size(329, 270);
             this.TC_Aggregation.TabIndex = 0;
             this.TC_Aggregation.Text = "Aggregation";
             this.TC_Aggregation.UseVisualStyleBackColor = true;
@@ -333,7 +335,7 @@ namespace BP_ZalohovaciNastroj
             this.TC_FilePath.Margin = new System.Windows.Forms.Padding(2);
             this.TC_FilePath.Name = "TC_FilePath";
             this.TC_FilePath.Padding = new System.Windows.Forms.Padding(2);
-            this.TC_FilePath.Size = new System.Drawing.Size(396, 308);
+            this.TC_FilePath.Size = new System.Drawing.Size(329, 308);
             this.TC_FilePath.TabIndex = 1;
             this.TC_FilePath.Text = "File-Path";
             this.TC_FilePath.UseVisualStyleBackColor = true;
@@ -363,11 +365,11 @@ namespace BP_ZalohovaciNastroj
             this.TC_Attribute.Controls.Add(this.CHB_ReadOnly);
             this.TC_Attribute.Controls.Add(this.CHB_Archive);
             this.TC_Attribute.Controls.Add(this.label2);
-            this.TC_Attribute.Location = new System.Drawing.Point(4, 22);
+            this.TC_Attribute.Location = new System.Drawing.Point(4, 21);
             this.TC_Attribute.Margin = new System.Windows.Forms.Padding(2);
             this.TC_Attribute.Name = "TC_Attribute";
             this.TC_Attribute.Padding = new System.Windows.Forms.Padding(2);
-            this.TC_Attribute.Size = new System.Drawing.Size(396, 308);
+            this.TC_Attribute.Size = new System.Drawing.Size(329, 311);
             this.TC_Attribute.TabIndex = 2;
             this.TC_Attribute.Text = "Attribute";
             this.TC_Attribute.UseVisualStyleBackColor = true;
@@ -437,7 +439,7 @@ namespace BP_ZalohovaciNastroj
             this.TC_DateTime.Margin = new System.Windows.Forms.Padding(2);
             this.TC_DateTime.Name = "TC_DateTime";
             this.TC_DateTime.Padding = new System.Windows.Forms.Padding(2);
-            this.TC_DateTime.Size = new System.Drawing.Size(396, 308);
+            this.TC_DateTime.Size = new System.Drawing.Size(329, 308);
             this.TC_DateTime.TabIndex = 3;
             this.TC_DateTime.Text = "Date-Time";
             this.TC_DateTime.UseVisualStyleBackColor = true;
@@ -512,7 +514,7 @@ namespace BP_ZalohovaciNastroj
             this.TC_Size.Margin = new System.Windows.Forms.Padding(2);
             this.TC_Size.Name = "TC_Size";
             this.TC_Size.Padding = new System.Windows.Forms.Padding(2);
-            this.TC_Size.Size = new System.Drawing.Size(396, 308);
+            this.TC_Size.Size = new System.Drawing.Size(329, 308);
             this.TC_Size.TabIndex = 4;
             this.TC_Size.Text = "Size";
             this.TC_Size.UseVisualStyleBackColor = true;
@@ -681,6 +683,7 @@ namespace BP_ZalohovaciNastroj
             // B_AddNext
             // 
             this.B_AddNext.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.B_AddNext.Font = new System.Drawing.Font("Anonymous Pro", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.B_AddNext.Location = new System.Drawing.Point(0, 0);
             this.B_AddNext.Margin = new System.Windows.Forms.Padding(2);
             this.B_AddNext.Name = "B_AddNext";
@@ -694,6 +697,7 @@ namespace BP_ZalohovaciNastroj
             // B_AddChild
             // 
             this.B_AddChild.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.B_AddChild.Font = new System.Drawing.Font("Anonymous Pro", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.B_AddChild.Location = new System.Drawing.Point(0, 0);
             this.B_AddChild.Margin = new System.Windows.Forms.Padding(2);
             this.B_AddChild.Name = "B_AddChild";
@@ -707,13 +711,13 @@ namespace BP_ZalohovaciNastroj
             // B_EditFilter
             // 
             this.B_EditFilter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.B_EditFilter.Location = new System.Drawing.Point(0, 0);
+            this.B_EditFilter.Location = new System.Drawing.Point(0, 10);
             this.B_EditFilter.Margin = new System.Windows.Forms.Padding(2);
             this.B_EditFilter.Name = "B_EditFilter";
             this.B_EditFilter.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.B_EditFilter.Size = new System.Drawing.Size(86, 41);
+            this.B_EditFilter.Size = new System.Drawing.Size(337, 31);
             this.B_EditFilter.TabIndex = 1;
-            this.B_EditFilter.Text = "Save filter edit";
+            this.B_EditFilter.Text = "Apply changes";
             this.B_EditFilter.UseVisualStyleBackColor = true;
             this.B_EditFilter.Click += new System.EventHandler(this.B_EditFilter_Click);
             // 
@@ -765,7 +769,6 @@ namespace BP_ZalohovaciNastroj
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(257, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
@@ -802,7 +805,7 @@ namespace BP_ZalohovaciNastroj
             // 
             this.panel6.Controls.Add(this.B_Remove);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 123);
+            this.panel6.Location = new System.Drawing.Point(0, 82);
             this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(86, 41);
@@ -812,7 +815,7 @@ namespace BP_ZalohovaciNastroj
             // 
             this.panel5.Controls.Add(this.B_AddNext);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 82);
+            this.panel5.Location = new System.Drawing.Point(0, 41);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(86, 41);
@@ -822,7 +825,7 @@ namespace BP_ZalohovaciNastroj
             // 
             this.panel4.Controls.Add(this.B_AddChild);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 41);
+            this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(86, 41);
@@ -831,11 +834,12 @@ namespace BP_ZalohovaciNastroj
             // panel3
             // 
             this.panel3.Controls.Add(this.B_EditFilter);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(8, 302);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(86, 41);
+            this.panel3.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.panel3.Size = new System.Drawing.Size(337, 41);
             this.panel3.TabIndex = 7;
             // 
             // backgroundWorker1

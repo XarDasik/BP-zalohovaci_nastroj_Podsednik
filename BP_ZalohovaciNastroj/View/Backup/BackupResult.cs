@@ -115,8 +115,9 @@ namespace BP_ZalohovaciNastroj
             {
                 foreach (DirectoryInfo item in di.GetDirectories())
                 {
-                    int subDirectory = GetColorIndexOfFolder(item);
-                    temp.Add(subDirectory);
+                    int folderColor = GetColorIndexOfFolder(item);
+                    if (folderColor != EMPTY_FOLDER_INDEX)
+                        temp.Add(folderColor);
                 }
                 for (int i = 0; i < temp.Count - 1; i++)
                 {
@@ -131,10 +132,9 @@ namespace BP_ZalohovaciNastroj
                     temp.Add(actualDirectory);
                     foreach (DirectoryInfo item in di.GetDirectories())
                     {
-                        int subDirectory = GetColorIndexOfFolder(item);
-                        temp.Add(subDirectory);
-                        //if (item.GetDirectories().Length > 0)
-                        //temp.Add(GetColorIndexOfFolder(item));
+                        int folderColor = GetColorIndexOfFolder(item);
+                        if (folderColor != EMPTY_FOLDER_INDEX)
+                            temp.Add(folderColor);
                     }
                     for (int i = 0; i < temp.Count - 1; i++)
                     {
@@ -171,14 +171,6 @@ namespace BP_ZalohovaciNastroj
                 return YELLOW_FOLDER_INDEX;
             else
                 return RED_FOLDER_INDEX;
-            /*if (notBackUpedGray == di.GetFiles().Count())
-                return GRAY_FOLDER_INDEX;
-            if (backUped == 0 && di.GetFiles().Count() > 0 && notBackUpedGray == 0)
-                return RED_FOLDER_INDEX;
-            else if (backUped < di.GetFiles().Count())
-                return YELLOW_FOLDER_INDEX;
-            else
-                return GREEN_FOLDER_INDEX;*/
         }
         
 

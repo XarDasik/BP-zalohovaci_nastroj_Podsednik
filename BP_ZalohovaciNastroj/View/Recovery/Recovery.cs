@@ -203,7 +203,6 @@ namespace BP_ZalohovaciNastroj
                         {
                             string source = file.FullName;
                             string destination = temp2.Replace(TB_RootPath.Text, TB_DestinationPath.Text).Substring(0, temp3.Replace(TB_RootPath.Text, TB_DestinationPath.Text).LastIndexOf('\\') + 1) + originalNamesOfFiles[index++];
-                            //File.Copy(file.FullName, temp2.Replace(TB_RootPath.Text, TB_DestinationPath.Text).Substring(0, temp2.Replace(TB_RootPath.Text, TB_DestinationPath.Text).LastIndexOf('\\') + 1) + originalNamesOfFiles[index++], false);
                             File.Copy(source, destination, false);
                             result.Add(file, Result.SUCCESSFULL);
                         }

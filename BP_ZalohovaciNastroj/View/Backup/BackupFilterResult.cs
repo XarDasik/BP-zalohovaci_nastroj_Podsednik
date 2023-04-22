@@ -142,42 +142,43 @@ namespace BP_ZalohovaciNastroj
                 return GetColorIndexOfFolderByFiles(di);
             if (GetColorIndexOfFolderByFiles(di) == YELLOW_FOLDER_INDEX)
                 return YELLOW_FOLDER_INDEX;
-            
 
-            List<int> temp = new List<int>();
+           List<int> temp = new List<int>();
 
-            int actualDirectory = GetColorIndexOfFolderByFiles(di);
-            if (actualDirectory == EMPTY_FOLDER_INDEX && di.GetDirectories().Length > 0)
-            {
-                foreach (DirectoryInfo item in di.GetDirectories())
+                int actualDirectory = GetColorIndexOfFolderByFiles(di);
+                if (actualDirectory == EMPTY_FOLDER_INDEX && di.GetDirectories().Length > 0)
                 {
-                    int subDirectory = GetColorIndexOfFolder(item);
-                    temp.Add(subDirectory);
+                    foreach (DirectoryInfo item in di.GetDirectories())
+                    {
+                        int folderColor = GetColorIndexOfFolder(item);
+                        if (folderColor != EMPTY_FOLDER_INDEX)
+                            temp.Add(folderColor);
+                    }
+                    for (int i = 0; i < temp.Count - 1; i++)
+                    {
+                        if (temp[i] != temp[i + 1])
+                            return YELLOW_FOLDER_INDEX;
+                    }
+                    return temp[temp.Count - 1];
                 }
-                for (int i = 0; i < temp.Count - 1; i++)
+                else 
                 {
-                    if (temp[i] != temp[i + 1])
-                        return YELLOW_FOLDER_INDEX;
-                }
-                return temp[temp.Count - 1];
-            }
-            else 
-            {
-                temp.Add(actualDirectory);
+                    temp.Add(actualDirectory);
 
-                foreach (DirectoryInfo item in di.GetDirectories())
-                {
-                    int subDirectory = GetColorIndexOfFolder(item);
-                    temp.Add(subDirectory);
+                    foreach (DirectoryInfo item in di.GetDirectories())
+                    {
+                        int folderColor = GetColorIndexOfFolder(item);
+                        if (folderColor != EMPTY_FOLDER_INDEX)
+                            temp.Add(folderColor);
+                    }
+                    for (int i = 0; i < temp.Count - 1; i++)
+                    {
+                        if (temp[i] != temp[i + 1])
+                            return YELLOW_FOLDER_INDEX;
+                    }
                 }
-                for (int i = 0; i < temp.Count - 1; i++)
-                {
-                    if (temp[i] != temp[i + 1])
-                        return YELLOW_FOLDER_INDEX;
-                }
-            }
-            
-            return GetColorIndexOfFolderByFiles(di);
+
+                return GetColorIndexOfFolderByFiles(di);
         }
         private int GetColorIndexOfFolderByFiles(DirectoryInfo di)
         {

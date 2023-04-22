@@ -62,7 +62,7 @@ namespace BP_ZalohovaciNastroj.View.Recovery
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(311, 8);
+            this.label7.Location = new System.Drawing.Point(347, 8);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 12);
             this.label7.TabIndex = 35;
@@ -70,7 +70,7 @@ namespace BP_ZalohovaciNastroj.View.Recovery
             // 
             // pb_gray
             // 
-            this.pb_gray.Location = new System.Drawing.Point(288, 8);
+            this.pb_gray.Location = new System.Drawing.Point(324, 8);
             this.pb_gray.Name = "pb_gray";
             this.pb_gray.Size = new System.Drawing.Size(17, 12);
             this.pb_gray.TabIndex = 34;
@@ -140,7 +140,7 @@ namespace BP_ZalohovaciNastroj.View.Recovery
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(311, 30);
+            this.label1.Location = new System.Drawing.Point(347, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 12);
             this.label1.TabIndex = 37;
@@ -148,7 +148,7 @@ namespace BP_ZalohovaciNastroj.View.Recovery
             // 
             // pb_error
             // 
-            this.pb_error.Location = new System.Drawing.Point(288, 30);
+            this.pb_error.Location = new System.Drawing.Point(324, 30);
             this.pb_error.Name = "pb_error";
             this.pb_error.Size = new System.Drawing.Size(17, 12);
             this.pb_error.TabIndex = 36;
@@ -199,7 +199,7 @@ namespace BP_ZalohovaciNastroj.View.Recovery
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(311, 73);
+            this.label8.Location = new System.Drawing.Point(347, 73);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(125, 12);
             this.label8.TabIndex = 43;
@@ -207,7 +207,7 @@ namespace BP_ZalohovaciNastroj.View.Recovery
             // 
             // pb_GrayFile
             // 
-            this.pb_GrayFile.Location = new System.Drawing.Point(289, 71);
+            this.pb_GrayFile.Location = new System.Drawing.Point(325, 71);
             this.pb_GrayFile.Name = "pb_GrayFile";
             this.pb_GrayFile.Size = new System.Drawing.Size(17, 15);
             this.pb_GrayFile.TabIndex = 42;
@@ -217,7 +217,7 @@ namespace BP_ZalohovaciNastroj.View.Recovery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(440, 119);
+            this.ClientSize = new System.Drawing.Size(472, 119);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.pb_GrayFile);
             this.Controls.Add(this.label3);

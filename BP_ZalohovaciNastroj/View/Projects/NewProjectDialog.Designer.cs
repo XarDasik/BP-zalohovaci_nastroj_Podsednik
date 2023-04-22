@@ -141,7 +141,6 @@ namespace BP_ZalohovaciNastroj.View
             this.MaximumSize = new System.Drawing.Size(564, 187);
             this.MinimumSize = new System.Drawing.Size(564, 187);
             this.Name = "NewProjectDialog";
-            this.ShowIcon = false;
             this.Text = "New project";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
